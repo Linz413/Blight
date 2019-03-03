@@ -35,13 +35,15 @@ public class StudentAI : MonoBehaviour
 
     private bool wasGrounded;
     private Vector3 currentDirection = Vector3.zero;
-    private float currentV = 5f;
-    private float currentH = 5f;
+    private float currentV = 2f;
+    private float currentH = 2f;
 
     private float jumpTimeStamp = 0;
     private float minJumpInterval = 0.25f;
 
     private bool isGrounded;
+    private bool isLured;
+    public bool atBusStop;
     private List<Collider> collisions = new List<Collider>();
 
 
@@ -53,13 +55,16 @@ public class StudentAI : MonoBehaviour
         state = StudentState.Idle;
         currWaypoint = -1;
         isGrounded = true;
+        isLured = false;
+        atBusStop = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         anim.SetFloat("vely", agent.velocity.magnitude / agent.speed);
-        anim.SetBool("Grounded", isGrounded);
+        anim.SetBool("Grounded", true);
+        print(state);
         if (currWaypoint == waypoints.Length)
         {
             currWaypoint = -1;
@@ -68,14 +73,19 @@ public class StudentAI : MonoBehaviour
         switch (state)
         {
             case StudentState.Idle:
-                if (anim.GetBool("Grounded"))
+                if (anim.GetBool("Grounded") && !isLured)
                 {
                     state = StudentState.Walk;
+                } else
+                {
+                    anim.SetFloat("MoveSpeed", 0);
                 }
                 break;
             case StudentState.Walk:
                 if (!agent.pathPending && agent.remainingDistance == 0)
                 {
+                    currentV = 2f;
+                    currentH = 2f;
                     SetNextWaypoint();
                 }
                 break;
@@ -89,10 +99,11 @@ public class StudentAI : MonoBehaviour
                 }     
                 break;
             case StudentState.Hit:
-                
+                // Play an oof audio
+                anim.enabled = false;
                 break;
             case StudentState.PickedUp:
-
+                // IMPLEMENT LATER
                 break;
             default:
                 break;
@@ -188,11 +199,13 @@ public class StudentAI : MonoBehaviour
     {
         if (lured && p != null)
         {
+            isLured = true;
             state = StudentState.Pizza;
             pizzaRigidBody = p;
         }
         else
         {
+            isLured = false;
             state = StudentState.Walk;
         }
         
@@ -201,7 +214,41 @@ public class StudentAI : MonoBehaviour
     void followPizza(Rigidbody pizzaLure)
     {
         agent.SetDestination(pizzaLure.position);
+        print(agent.remainingDistance);
+        if (agent.remainingDistance < 5)
+        {
+            agent.SetDestination(agent.transform.position);
+            state = StudentState.Idle;
+        }
     }
 
+    void OnTriggerEnter(Collider c)
+    {
+        if (atBusStop)
+        {
+            if (c.attachedRigidbody != null)
+            {
+                PeopleCollection busPickUp = c.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
+                if (busPickUp != null)
+                {
+                    print("Picked Up");
+                    Destroy(this.gameObject);
+                    busPickUp.ReceivePickup();
+                    state = StudentState.PickedUp;
+                }
+            }
+        } else
+        {
+            if (c.attachedRigidbody != null)
+            {
+                PeopleCollection busPickUp = c.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
+                if (busPickUp != null)
+                {
+                    state = StudentState.Hit;
+                }
+            }
+            
+        }
+    }
 
 }

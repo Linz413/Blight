@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class PizzaLure : MonoBehaviour
 {
-    
-    int studentsLured = 0;
+
+    private float aliveTime = 10f;
     public float rotateSpeed = 40f;
     private ArrayList students = new ArrayList();
+    private float counter;
 
     void Start()
     {
-        
+        counter = 0f;
     }
 
     public void Update()
     {
         //transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);
+        int stillPizza = Eaten();
     }
 
     void OnTriggerEnter(Collider c)
@@ -24,12 +26,10 @@ public class PizzaLure : MonoBehaviour
         print(c);
         if (c.attachedRigidbody != null)
         {
-            print("WTF");
             StudentAI student = c.attachedRigidbody.gameObject.GetComponent<StudentAI>();
             if (student != null)
-            {
-                int stillPizza = Eaten();
-                if (stillPizza == 1)
+            { 
+                if (counter <= aliveTime)
                 {
                     student.StudentLured(true, this.gameObject.GetComponent<Rigidbody>());
                     students.Add(student);
@@ -50,8 +50,8 @@ public class PizzaLure : MonoBehaviour
     // 1 means the pizza is still there
     public int Eaten()
     {
-        studentsLured++;
-        if (studentsLured >= 2)
+        counter += Time.deltaTime;
+        if (counter >= aliveTime)
         {
             Destroy(this.gameObject);
             return 0;
