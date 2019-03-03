@@ -23,7 +23,7 @@ public class PizzaLure : MonoBehaviour
 
     void OnTriggerEnter(Collider c)
     {
-        print(c);
+        //print(c);
         if (c.attachedRigidbody != null)
         {
             StudentAI student = c.attachedRigidbody.gameObject.GetComponent<StudentAI>();

@@ -56,7 +56,7 @@ public class StudentAI : MonoBehaviour
         currWaypoint = -1;
         isGrounded = true;
         isLured = false;
-        atBusStop = true;
+        atBusStop = false;
     }
 
     // Update is called once per frame
@@ -64,7 +64,7 @@ public class StudentAI : MonoBehaviour
     {
         anim.SetFloat("vely", agent.velocity.magnitude / agent.speed);
         anim.SetBool("Grounded", true);
-        print(state);
+        //print(state);
         if (currWaypoint == waypoints.Length)
         {
             currWaypoint = -1;
@@ -214,7 +214,7 @@ public class StudentAI : MonoBehaviour
     void followPizza(Rigidbody pizzaLure)
     {
         agent.SetDestination(pizzaLure.position);
-        print(agent.remainingDistance);
+        //print(agent.remainingDistance);
         if (agent.remainingDistance < 5)
         {
             agent.SetDestination(agent.transform.position);
