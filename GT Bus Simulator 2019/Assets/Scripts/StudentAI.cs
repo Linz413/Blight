@@ -23,6 +23,7 @@ public class StudentAI : MonoBehaviour
     private float moveSpeed = 2;
     private float turnSpeed = 200;
     private float jumpForce = 4;
+    public Rigidbody pizzaRigidBody = null;
 
     public GameObject[] waypoints;
     private StudentState state;
@@ -59,6 +60,11 @@ public class StudentAI : MonoBehaviour
     {
         anim.SetFloat("vely", agent.velocity.magnitude / agent.speed);
         anim.SetBool("Grounded", isGrounded);
+        if (currWaypoint == waypoints.Length)
+        {
+            currWaypoint = -1;
+        }
+        //print(this.gameObject.GetComponent<Collider>());
         switch (state)
         {
             case StudentState.Idle:
@@ -74,7 +80,13 @@ public class StudentAI : MonoBehaviour
                 }
                 break;
             case StudentState.Pizza:
-                
+                if (pizzaRigidBody != null)
+                {
+                    followPizza(pizzaRigidBody);
+                } else
+                {
+                    state = StudentState.Walk;
+                }     
                 break;
             case StudentState.Hit:
                 
@@ -101,7 +113,7 @@ public class StudentAI : MonoBehaviour
             transform.Rotate(0, currentH * turnSpeed * Time.deltaTime, 0);
 
             anim.SetFloat("MoveSpeed", currentV);
-            print(currentV);
+            //print(currentV);
             //JumpingAndLanding();
             currWaypoint += 1;
             agent.SetDestination(waypoints[currWaypoint].transform.position);
@@ -170,6 +182,25 @@ public class StudentAI : MonoBehaviour
         if (collisions.Count == 0) {
             isGrounded = false;
         }
+    }
+
+    public void StudentLured(bool lured, Rigidbody p)
+    {
+        if (lured && p != null)
+        {
+            state = StudentState.Pizza;
+            pizzaRigidBody = p;
+        }
+        else
+        {
+            state = StudentState.Walk;
+        }
+        
+    }
+
+    void followPizza(Rigidbody pizzaLure)
+    {
+        agent.SetDestination(pizzaLure.position);
     }
 
 
