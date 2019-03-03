@@ -13,6 +13,5 @@ public class personCollection : MonoBehaviour
     			Destroy(this.gameObject);
     		}
     	}
-    	
     }
 }
