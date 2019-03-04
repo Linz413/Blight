@@ -46,6 +46,9 @@ public class StudentAI : MonoBehaviour
     public bool atBusStop;
     private List<Collider> collisions = new List<Collider>();
 
+    private float counter;
+    private float deathTime = 3f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +59,7 @@ public class StudentAI : MonoBehaviour
         currWaypoint = -1;
         isGrounded = true;
         isLured = false;
+        counter = 0f;
         atBusStop = false;
     }
 
@@ -101,6 +105,13 @@ public class StudentAI : MonoBehaviour
             case StudentState.Hit:
                 // Play an oof audio
                 anim.enabled = false;
+                agent.isStopped = true;
+                agent.ResetPath();
+                counter += Time.deltaTime;
+                if (counter >= deathTime)
+                {
+                    Destroy(this.gameObject);
+                }
                 // NEED TO REMOVE OBJECT AT SOME POINT I GUESS
                 break;
             case StudentState.PickedUp:
