@@ -101,6 +101,7 @@ public class StudentAI : MonoBehaviour
             case StudentState.Hit:
                 // Play an oof audio
                 anim.enabled = false;
+                // NEED TO REMOVE OBJECT AT SOME POINT I GUESS
                 break;
             case StudentState.PickedUp:
                 // IMPLEMENT LATER
