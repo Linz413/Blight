@@ -49,6 +49,8 @@ public class StudentAI : MonoBehaviour
     private float counter;
     private float deathTime = 3f;
 
+    private bool hasBeenHit = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -254,9 +256,11 @@ public class StudentAI : MonoBehaviour
             if (c.attachedRigidbody != null)
             {
                 PeopleCollection busPickUp = c.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
-                if (busPickUp != null)
+                if (busPickUp != null && hasBeenHit != true)
                 {
+                    busPickUp.HitStudent();
                     state = StudentState.Hit;
+                    hasBeenHit = true;
                 }
             }
             

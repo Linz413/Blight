@@ -36,6 +36,7 @@ public class CarAI : MonoBehaviour
         state = CarState.Idle;
         currWaypoint = -1;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        m_CarController = GetComponent<CarController>();
     }
 
     // Update is called once per frame
