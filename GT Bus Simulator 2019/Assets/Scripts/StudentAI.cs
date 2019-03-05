@@ -68,7 +68,7 @@ public class StudentAI : MonoBehaviour
     {
         anim.SetFloat("vely", agent.velocity.magnitude / agent.speed);
         anim.SetBool("Grounded", true);
-        //print(state);
+        print(state);
         if (currWaypoint == waypoints.Length)
         {
             currWaypoint = -1;

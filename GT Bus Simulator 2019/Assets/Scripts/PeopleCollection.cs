@@ -12,7 +12,7 @@ public class PeopleCollection : MonoBehaviour
     private float currentTime = 0;
 
 	void Start() {
-		scoreText.text = "Picked Up: " + score.ToString();
+		//scoreText.text = "Picked Up: " + score.ToString();
 	}
 
     private void Update()

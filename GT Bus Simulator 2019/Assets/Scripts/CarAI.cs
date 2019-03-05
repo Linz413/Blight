@@ -45,7 +45,7 @@ public class CarAI : MonoBehaviour
         {
             currWaypoint = -1;
         }
-        print(state);
+        //print(state);
         switch (state)
         {
             case CarState.Idle:
