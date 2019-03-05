@@ -9,6 +9,7 @@ public class PizzaLure : MonoBehaviour
     public float rotateSpeed = 40f;
     private ArrayList students = new ArrayList();
     private float counter;
+    public bool specialPizza = true;
 
     void Start()
     {
@@ -18,13 +19,16 @@ public class PizzaLure : MonoBehaviour
     public void Update()
     {
         //transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);
-        int stillPizza = Eaten();
+        if (!specialPizza)
+        {
+            int stillPizza = Eaten();
+        }
     }
 
     void OnTriggerEnter(Collider c)
     {
         //print(c);
-        if (c.attachedRigidbody != null)
+        if (c.attachedRigidbody != null && !specialPizza)
         {
             StudentAI student = c.attachedRigidbody.gameObject.GetComponent<StudentAI>();
             if (student != null)
