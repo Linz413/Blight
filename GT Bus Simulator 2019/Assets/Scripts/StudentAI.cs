@@ -19,7 +19,7 @@ public class StudentAI : MonoBehaviour
     private UnityEngine.AI.NavMeshHit hit;
     private Rigidbody rigidBody;
     private Animator anim;
-    private int currWaypoint;
+    public int currWaypoint = -1;
     private float moveSpeed = 2;
     private float turnSpeed = 200;
     private float jumpForce = 4;
@@ -58,7 +58,6 @@ public class StudentAI : MonoBehaviour
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         anim = GetComponent<Animator>();
         state = StudentState.Idle;
-        currWaypoint = -1;
         isGrounded = true;
         isLured = false;
         counter = 0f;
@@ -102,6 +101,7 @@ public class StudentAI : MonoBehaviour
                 } else
                 {
                     state = StudentState.Walk;
+                    agent.SetDestination(waypoints[currWaypoint].transform.position);
                 }     
                 break;
             case StudentState.Hit:
@@ -221,6 +221,7 @@ public class StudentAI : MonoBehaviour
         {
             isLured = false;
             state = StudentState.Walk;
+            agent.SetDestination(waypoints[currWaypoint].transform.position);
         }
         
     }

@@ -135,18 +135,21 @@ public class CarAI : MonoBehaviour
             if (student != null)
             {
                 state = CarState.Drive;
+                agent.SetDestination(waypoints[currWaypoint].transform.position);
             }
             // another car has entered the trigger
             CarAI otherCar = c.attachedRigidbody.GetComponent<CarAI>();
             if (otherCar != null)
             {
                 state = CarState.Drive;
+                agent.SetDestination(waypoints[currWaypoint].transform.position);
             }
             // the bus has entered the trigger
             PeopleCollection bus = c.attachedRigidbody.GetComponent<PeopleCollection>();
             if (bus != null)
             {
                 state = CarState.Drive;
+                agent.SetDestination(waypoints[currWaypoint].transform.position);
             }
         } 
         
