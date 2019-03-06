@@ -17,9 +17,15 @@ public class GameStarter : MonoBehaviour
         
     }
 
-    public void StartGame()
+    public void StartBlueRouteGame()
     {
         //ADD AUDIO HERE
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("BlueRoute");
+    }
+
+    public void StartRedRouteGame()
+    {
+        //ADD AUDIO HERE
+        SceneManager.LoadScene("RedRoute");
     }
 }

@@ -7,7 +7,7 @@ public class MainMenuQuitter : MonoBehaviour
 {
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("StartMenu");
     }
     // Start is called before the first frame update
     void Start()
