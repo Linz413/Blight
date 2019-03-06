@@ -16,7 +16,7 @@ public class CarAI : MonoBehaviour
 {
     private UnityEngine.AI.NavMeshAgent agent;
     private Rigidbody rigidBody;
-    private int currWaypoint;
+    public int currWaypoint = -1;
     //public Rigidbody pizzaRigidBody = null;
 
     public GameObject[] waypoints;
@@ -34,7 +34,6 @@ public class CarAI : MonoBehaviour
     void Start()
     {
         state = CarState.Idle;
-        currWaypoint = -1;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         m_CarController = GetComponent<CarController>();
     }
