@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+// using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ public class PeopleCollection : MonoBehaviour
     private CanvasGroup gameScoreCanvasGroup;
     private CanvasGroup gameEndCanvasGroup;
     public Text gameEndText;
-
+    public bool isRedRoute = false;
 	void Start() {
 		updateScore();
 		updateStrikes();

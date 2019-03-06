@@ -8,6 +8,7 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="blueRouteHide.cs" t="Include" />
         <e p="carHitScript.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="GitHub" t="Include">
@@ -19,6 +20,7 @@
             </e>
           </e>
         </e>
+        <e p="redRouteHide.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="BusAbilities.cs" t="Include" />
           <e p="cameraController.cs" t="Include" />
@@ -33,6 +35,7 @@
           <e p="PizzaLure.cs" t="Include" />
           <e p="StudentAI.cs" t="Include" />
         </e>
+        <e p="showRoute.cs" t="Include" />
         <e p="Standard Assets" t="Include">
           <e p="Characters" t="Include">
             <e p="ThirdPersonCharacter" t="Include">
