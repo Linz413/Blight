@@ -261,6 +261,7 @@ public class StudentAI : MonoBehaviour
                 {
                     busPickUp.HitStudent();
                     state = StudentState.Hit;
+                    GetComponent<AudioSource>().Play();
                     hasBeenHit = true;
                 }
             }
