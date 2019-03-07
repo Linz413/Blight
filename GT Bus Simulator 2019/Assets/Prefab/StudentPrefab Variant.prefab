@@ -1418,7 +1418,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 45d480461bbdc704587e117329ce8e69, type: 3}
   m_Controller: {fileID: 9100000, guid: f297797635a2b7445ad2ea55cec7353b, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
@@ -1486,8 +1486,8 @@ MonoBehaviour:
   pizzaRigidBody: {fileID: 0}
   waypoints:
   - {fileID: 0}
+  bus: {fileID: 0}
   atBusStop: 0
-  hit_sound: {fileID: 8300000, guid: fa7c24c7b3d66403ca191fecc2312c8c, type: 3}
 --- !u!195 &2052110387
 NavMeshAgent:
   m_ObjectHideFlags: 0

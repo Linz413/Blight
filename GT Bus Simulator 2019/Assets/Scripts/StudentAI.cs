@@ -26,6 +26,7 @@ public class StudentAI : MonoBehaviour
     public Rigidbody pizzaRigidBody = null;
 
     public GameObject[] waypoints;
+    public Rigidbody bus = null;
     private StudentState state;
 
     private readonly float interpolation = 10;
@@ -135,11 +136,11 @@ public class StudentAI : MonoBehaviour
         {
             float v = Input.GetAxis("Vertical");
             float h = Input.GetAxis("Horizontal");
-            currentV = Mathf.Lerp(currentV, v, Time.deltaTime * interpolation);
-            currentH = Mathf.Lerp(currentH, h, Time.deltaTime * interpolation);
+            //currentV = Mathf.Lerp(currentV, v, Time.deltaTime * interpolation);
+            //currentH = Mathf.Lerp(currentH, h, Time.deltaTime * interpolation);
 
-            transform.position += transform.forward * currentV * moveSpeed * Time.deltaTime;
-            transform.Rotate(0, currentH * turnSpeed * Time.deltaTime, 0);
+            //transform.position += transform.forward * currentV * moveSpeed * Time.deltaTime;
+            //transform.Rotate(0, currentH * turnSpeed * Time.deltaTime, 0);
 
             anim.SetFloat("MoveSpeed", currentV);
             //print(currentV);
