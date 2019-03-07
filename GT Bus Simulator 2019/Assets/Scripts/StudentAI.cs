@@ -43,7 +43,7 @@ public class StudentAI : MonoBehaviour
 
     private bool isGrounded;
     private bool isLured;
-    public bool atBusStop;
+    public bool atBusStop = false;
     private List<Collider> collisions = new List<Collider>();
 
     private float counter;
@@ -61,7 +61,6 @@ public class StudentAI : MonoBehaviour
         isGrounded = true;
         isLured = false;
         counter = 0f;
-        atBusStop = false;
     }
 
     // Update is called once per frame
@@ -74,7 +73,11 @@ public class StudentAI : MonoBehaviour
         {
             currWaypoint = -1;
         }
-        //print(this.gameObject.GetComponent<Collider>());
+        if (atBusStop && !agent.pathPending && agent.remainingDistance == 0 && state != StudentState.Idle)
+        {
+            state = StudentState.Idle;
+        }
+        print(state);
         switch (state)
         {
             case StudentState.Idle:
@@ -122,6 +125,7 @@ public class StudentAI : MonoBehaviour
             default:
                 break;
         }
+        
         wasGrounded = isGrounded;
     }
 
