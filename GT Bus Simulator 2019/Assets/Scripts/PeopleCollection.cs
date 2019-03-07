@@ -86,6 +86,19 @@ public class PeopleCollection : MonoBehaviour
 //            // LOSE CONDITION
 //        }
     }
+    
+    public void HitBusStop()
+    {
+        hitAI++;
+        busHealth = busHealth - 5;
+        myHealthSlider.value = busHealth;
+        if (busHealth == 0)
+        {
+            //LOSE CONDITION
+            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
+            gameEnd(message);
+        }
+    }
 
     private void updateScore()
     {
