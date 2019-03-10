@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class PeopleCollection : MonoBehaviour
 {
 	public Text scoreText;
-	int score = 0;
+    public AudioSource audioSource;
+    public AudioClip peopleCollectNoise;
+    public AudioClip crashNoise;
+    int score = 0;
     int killedStudents = 0;
     private int hitAI = 0;
     public float timeToWin = 30;
@@ -16,6 +19,7 @@ public class PeopleCollection : MonoBehaviour
     public Slider myHealthSlider;
     public int requiredScore = 10;
     public int strikes = 0;
+    public int maxKilledStudents = 10;
     public Text strikeText;
     private string message = "";
     public Canvas gameScoreCanvas;
@@ -48,6 +52,8 @@ public class PeopleCollection : MonoBehaviour
 
     public void ReceivePickup() {
     	score++;
+        audioSource.clip = peopleCollectNoise;
+        audioSource.Play();
     	//scoreText.text = "Picked Up: " + score.ToString();
         updateScore();
         if (score >= requiredScore && currentTime <= timeToWin)
@@ -62,7 +68,7 @@ public class PeopleCollection : MonoBehaviour
     {
         killedStudents++;
         updateStrikes();
-        if (killedStudents >= 3)
+        if (killedStudents >= maxKilledStudents)
         {
             // LOSE CONDITION
             message = "You hit too many students! License is revoked! You Lose!";
@@ -74,6 +80,8 @@ public class PeopleCollection : MonoBehaviour
     {
         hitAI++;
         busHealth = busHealth - 5;
+        audioSource.clip = crashNoise;
+        audioSource.Play();
         myHealthSlider.value = busHealth;
         if (busHealth == 0)
         {
@@ -91,6 +99,8 @@ public class PeopleCollection : MonoBehaviour
     {
         hitAI++;
         busHealth = busHealth - 5;
+        audioSource.clip = crashNoise;
+        audioSource.Play();
         myHealthSlider.value = busHealth;
         if (busHealth == 0)
         {

@@ -29,6 +29,8 @@ public class WheelDrive : MonoBehaviour
 
 	[Tooltip("The vehicle's drive type: rear-wheels drive, front-wheels drive or all-wheels drive.")]
 	public DriveType driveType;
+    bool playingSound;
+    public AudioSource audioSource;
 
     private WheelCollider[] m_Wheels;
 
@@ -36,8 +38,9 @@ public class WheelDrive : MonoBehaviour
 	void Start()
 	{
 		m_Wheels = GetComponentsInChildren<WheelCollider>();
+        playingSound = false;
 
-		for (int i = 0; i < m_Wheels.Length; ++i) 
+        for (int i = 0; i < m_Wheels.Length; ++i) 
 		{
 			var wheel = m_Wheels [i];
 
@@ -59,6 +62,17 @@ public class WheelDrive : MonoBehaviour
 
 		float angle = maxAngle * Input.GetAxis("Horizontal");
 		float torque = maxTorque * Input.GetAxis("Vertical");
+
+        if (playingSound && angle == 0 && torque == 0)
+        {
+            playingSound = false;
+            audioSource.Pause();
+        }
+        else if (!playingSound && (angle != 0 || torque != 0))
+        {
+            playingSound = true;
+            audioSource.Play();
+        }
 
 		float handBrake = Input.GetKey(KeyCode.X) ? brakeTorque : 0;
 
