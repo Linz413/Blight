@@ -14,7 +14,7 @@ public class PeopleCollection : MonoBehaviour
     private float currentTime = 0;
     private int busHealth = 100;
     public Slider myHealthSlider;
-    public int requiredScore = 100;
+    public int requiredScore = 10;
     public int strikes = 0;
     public Text strikeText;
     private string message = "";
