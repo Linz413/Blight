@@ -52,7 +52,6 @@ public class CarAI : MonoBehaviour
                 state = CarState.Drive;
                 break;
             case CarState.Drive:
-                
                 if (!agent.pathPending && agent.remainingDistance == 0)
                 {
                     SetNextWaypoint();
@@ -69,10 +68,6 @@ public class CarAI : MonoBehaviour
                 m_CarController.Move(0, 0, -1f, 1f);
                 break;
             case CarState.AvoidBus:
-                //Vector3 direction = transform.position - target.transform.position;
-                //transform.LookAt(target);
-                //transform.Rotate(0, 90, 0);
-                //transform.Translate(Vector3.forward);
                 // HAVE CAR HONK AUDIO
                 agent.isStopped = true;
                 agent.ResetPath();

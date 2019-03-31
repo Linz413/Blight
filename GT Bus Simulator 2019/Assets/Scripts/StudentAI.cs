@@ -67,10 +67,10 @@ public class StudentAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("vely", agent.velocity.magnitude / agent.speed);
+        anim.SetFloat("MoveSpeed", agent.velocity.magnitude / agent.speed);
         anim.SetBool("Grounded", true);
         print(state);
-        if (currWaypoint == waypoints.Length)
+        if (currWaypoint == waypoints.Length - 1)
         {
             currWaypoint = -1;
         }
@@ -82,10 +82,19 @@ public class StudentAI : MonoBehaviour
         switch (state)
         {
             case StudentState.Idle:
-                if (anim.GetBool("Grounded") && !isLured)
+                if (anim.GetBool("Grounded") && !isLured && !atBusStop)
                 {
                     state = StudentState.Walk;
-                } else
+                }
+                else if (atBusStop)
+                {
+                    //anim.SetTrigger("Wave");
+                    anim.SetBool("Wave 0", true);
+                    //anim.SetFloat("MoveSpeed", 0.5f);
+                    print("Wave");
+                    //anim.ResetTrigger("Wave");
+                }
+                else
                 {
                     anim.SetFloat("MoveSpeed", 0);
                 }
@@ -93,8 +102,9 @@ public class StudentAI : MonoBehaviour
             case StudentState.Walk:
                 if (!agent.pathPending && agent.remainingDistance == 0)
                 {
-                    currentV = 2f;
-                    currentH = 2f;
+                    //currentV = 2f;
+                    //currentH = 2f;
+                    anim.SetFloat("MoveSpeed", 2f);
                     SetNextWaypoint();
                 }
                 break;
@@ -142,7 +152,7 @@ public class StudentAI : MonoBehaviour
             //transform.position += transform.forward * currentV * moveSpeed * Time.deltaTime;
             //transform.Rotate(0, currentH * turnSpeed * Time.deltaTime, 0);
 
-            anim.SetFloat("MoveSpeed", currentV);
+            //anim.SetFloat("MoveSpeed", currentV);
             //print(currentV);
             //JumpingAndLanding();
             currWaypoint += 1;
