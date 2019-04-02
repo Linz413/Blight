@@ -16,38 +16,81 @@ public class PeopleCollection : MonoBehaviour
     public float timeToWin = 30;
     private float currentTime = 0;
     private int busHealth = 100;
-    public Slider myHealthSlider;
+//    public Slider myHealthSlider;
     public int requiredScore = 10;
     public int strikes = 0;
-    public int maxKilledStudents = 10;
+    public int maxKilledStudents = 3;
     public Text strikeText;
     private string message = "";
     public Canvas gameScoreCanvas;
-    public Canvas gameEndCanvas;
+    public Canvas gameEndLoseCanvas;
+    public Canvas gameEndWinCanvas;
     private CanvasGroup gameScoreCanvasGroup;
-    private CanvasGroup gameEndCanvasGroup;
-    public Text gameEndText;
+    private CanvasGroup gameEndLoseCanvasGroup;
+    private CanvasGroup gameEndWinCanvasGroup;
+    public Text gameEndLoseText;
+    public Text gameEndWinText;
     public bool isRedRoute = false;
+    public Text timerText;
+    private float secondsCount;
+    private int minuteCount;
+    private int hourCount;
+    public GameObject[] busStops;
+    public int busCurrentBusStop;
+    public GameObject arrow;
+    private Vector3 targetPoint;
 	void Start() {
 		updateScore();
 		updateStrikes();
         gameScoreCanvasGroup = gameScoreCanvas.GetComponent<CanvasGroup>();
-        gameEndCanvasGroup = gameEndCanvas.GetComponent<CanvasGroup>();
-        gameEndCanvasGroup.alpha = 0f;
-        gameEndCanvasGroup.interactable = false;
-        gameEndCanvasGroup.blocksRaycasts = false;
-        myHealthSlider.value = busHealth;
+        
+        gameEndLoseCanvasGroup = gameEndLoseCanvas.GetComponent<CanvasGroup>();
+        gameEndLoseCanvasGroup.alpha = 0f;
+        gameEndLoseCanvasGroup.interactable = false;
+        gameEndLoseCanvasGroup.blocksRaycasts = false;
+        
+        gameEndWinCanvasGroup = gameEndWinCanvas.GetComponent<CanvasGroup>();
+        gameEndWinCanvasGroup.alpha = 0f;
+        gameEndWinCanvasGroup.interactable = false;
+        gameEndWinCanvasGroup.blocksRaycasts = false;
+        
+        targetPoint = busStops[busCurrentBusStop].transform.position;
+//        myHealthSlider.value = busHealth;
     }
 
     private void Update()
     {
-        currentTime += Time.deltaTime;   
-        if (currentTime > timeToWin)
+        UpdateTimerUI();
+        var difference = targetPoint - transform.position;
+        if (Vector3.Distance(targetPoint, transform.position) < 15)
         {
-            // LOSE CONDITION
-            message = "You were too slow and the students rioted! You are now unemployed... You Lose!";
-            gameEnd(message);
+            busCurrentBusStop++;
+            targetPoint = busStops[busCurrentBusStop].transform.position;
         }
+
+        if (isRedRoute)
+        {
+            difference.x = -90;
+        }
+        else
+        {
+            difference.x = 90;
+
+        }
+//        difference.y = 0;     // Flatten the vector, assuming you're not concerned with indicating height difference
+ 
+        // Maybe use some other method to actually apply the rotation  
+        Quaternion quat = Quaternion.LookRotation(difference.normalized);
+        Vector3 rot = quat.eulerAngles;
+        rot.x = -90;
+        arrow.transform.rotation = Quaternion.Euler(rot);
+//        currentTime += Time.deltaTime;   
+//        if (currentTime > timeToWin)
+//        {
+//            // LOSE CONDITION
+//            message = "You were too slow and the students rioted! You are now unemployed... You Lose!";
+//            gameEnd(message); 
+//        }
     }
 
     public void ReceivePickup() {
@@ -60,7 +103,7 @@ public class PeopleCollection : MonoBehaviour
         {
             // WIN CONDITION
             message = "You Win! Good job getting the students to class!";
-            gameEnd(message);
+            gameEndWin(message);
         }
     }
 
@@ -82,16 +125,12 @@ public class PeopleCollection : MonoBehaviour
         busHealth = busHealth - 5;
         audioSource.clip = crashNoise;
         audioSource.Play();
-        myHealthSlider.value = busHealth;
-        if (busHealth == 0)
-        {
-            //LOSE CONDITION
-            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
-            gameEnd(message);
-        }
-//        if (hitAI >= 3)
+//        myHealthSlider.value = busHealth;
+//        if (busHealth == 0)
 //        {
-//            // LOSE CONDITION
+//            //LOSE CONDITION
+//            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
+//            gameEnd(message);
 //        }
     }
     
@@ -101,13 +140,13 @@ public class PeopleCollection : MonoBehaviour
         busHealth = busHealth - 5;
         audioSource.clip = crashNoise;
         audioSource.Play();
-        myHealthSlider.value = busHealth;
-        if (busHealth == 0)
-        {
-            //LOSE CONDITION
-            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
-            gameEnd(message);
-        }
+//        myHealthSlider.value = busHealth;
+//        if (busHealth == 0)
+//        {
+//            //LOSE CONDITION
+//            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
+//            gameEnd(message);
+//        }
     }
 
     private void updateScore()
@@ -126,11 +165,43 @@ public class PeopleCollection : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameScoreCanvasGroup.alpha = 0f;
-        gameEndCanvasGroup.alpha = 1f;
-        gameEndCanvasGroup.interactable = true;
-        gameEndCanvasGroup.blocksRaycasts = true;
-        gameEndText.text = message;
+        gameEndLoseCanvasGroup.alpha = 1f;
+        gameEndLoseCanvasGroup.interactable = true;
+        gameEndLoseCanvasGroup.blocksRaycasts = true;
+        gameEndLoseText.text = message;
     }
     
-    
+    private void gameEndWin(string message)
+    {
+        Time.timeScale = 0f;
+        gameScoreCanvasGroup.alpha = 0f;
+        gameEndWinCanvasGroup.alpha = 1f;
+        gameEndWinCanvasGroup.interactable = true;
+        gameEndWinCanvasGroup.blocksRaycasts = true;
+        gameEndWinText.text = message;
+        var time = hourCount * 60 * 60 + minuteCount * 60 + secondsCount;
+        gameEndWinCanvasGroup.GetComponent<calculateScore>().calcScore(time, busHealth, killedStudents);
+        
+        
+    }
+
+    private void UpdateTimerUI()
+    {
+        secondsCount += Time.deltaTime;
+        timerText.text = hourCount + ":" + minuteCount.ToString("00") + ":" +
+                         ((int) secondsCount).ToString("00");
+        if (secondsCount >= 60)
+        {
+            minuteCount++;
+            secondsCount = 0;
+        }
+        else if (minuteCount >= 60)
+        {
+            hourCount++;
+            minuteCount = 0;
+        }
+    }
+
+
+
 }

@@ -19,11 +19,15 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="armController.cs" t="Include" />
           <e p="BusAbilities.cs" t="Include" />
           <e p="busStopCollision.cs" t="Include" />
+          <e p="calculateScore.cs" t="Include" />
           <e p="cameraController.cs" t="Include" />
           <e p="CarAI.cs" t="Include" />
           <e p="carHitScript.cs" t="Include" />
+          <e p="DriftCamera.cs" t="Include" />
+          <e p="EasySuspension.cs" t="Include" />
           <e p="GameQuitter.cs" t="Include" />
           <e p="GameStarter.cs" t="Include" />
           <e p="MainMenuQuitter.cs" t="Include" />
@@ -34,6 +38,7 @@
           <e p="PizzaLure.cs" t="Include" />
           <e p="showRoute.cs" t="Include" />
           <e p="StudentAI.cs" t="Include" />
+          <e p="WheelDrive.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="Characters" t="Include">
