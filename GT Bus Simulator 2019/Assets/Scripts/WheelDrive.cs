@@ -34,12 +34,36 @@ public class WheelDrive : MonoBehaviour
 
     private WheelCollider[] m_Wheels;
 
+    private float defaultMaxTorque;
+    public float yOffsetCOM;
+    
+
+    public GameObject FrontWheelLeft;
+    public GameObject FrontWheelRight;
+    public GameObject BackWheelLeft;
+    public GameObject BackWheelRight;
+    private WheelCollider fwl;
+    private WheelCollider fwr;
+    private WheelCollider bwl;
+    private WheelCollider bwr;
+    public float boostAmount;
+
+    private WheelFrictionCurve defaultCurve;
+    private WheelFrictionCurve driftingCurve;
+    private WheelFrictionCurve driftingCurveFront;
+    public float exs, exv, asy, asv, stif;
+    public Boolean slideForwardWheels;
+    private Rigidbody rb;
+
     // Find all the WheelColliders down in the hierarchy.
 	void Start()
 	{
+        rb = GetComponent<Rigidbody>();
+        rb.centerOfMass = rb.centerOfMass - new Vector3(0, yOffsetCOM, 0);
 		m_Wheels = GetComponentsInChildren<WheelCollider>();
         playingSound = false;
 
+        defaultMaxTorque = maxTorque;
         for (int i = 0; i < m_Wheels.Length; ++i) 
 		{
 			var wheel = m_Wheels [i];
@@ -51,14 +75,63 @@ public class WheelDrive : MonoBehaviour
 				ws.transform.parent = wheel.transform;
 			}
 		}
-	}
+        fwl = FrontWheelLeft.GetComponent<WheelCollider>();
+        fwr = FrontWheelRight.GetComponent<WheelCollider>();
+        bwl = BackWheelLeft.GetComponent<WheelCollider>();
+        bwr = BackWheelRight.GetComponent<WheelCollider>();
+        defaultCurve = bwl.sidewaysFriction;
+        driftingCurve = new WheelFrictionCurve();
+        driftingCurve.extremumSlip = exs;
+        driftingCurve.extremumValue = exv;
+        driftingCurve.asymptoteSlip = asy;
+        driftingCurve.asymptoteValue = asv;
+        driftingCurve.stiffness = stif;
+        
+    }
 
-	// This is a really simple approach to updating wheels.
-	// We simulate a rear wheel drive car and assume that the car is perfectly symmetric at local zero.
-	// This helps us to figure our which wheels are front ones and which are rear.
-	void Update()
+    //alters the max torque to give a speed boost to the car
+    public void speedBoost(bool condition, float superSpeed)
+    {
+        if (condition)
+        {
+            maxTorque = superSpeed;
+        }
+        else
+        {
+            maxTorque = defaultMaxTorque;
+        }
+    }
+    public void drift(bool condition, bool forwardWheelsToo)
+    {
+        if (condition)
+        {
+            if (forwardWheelsToo)
+            {
+                fwl.sidewaysFriction = driftingCurve;
+                fwr.sidewaysFriction = driftingCurve;
+            }
+            bwl.sidewaysFriction = driftingCurve;
+            bwr.sidewaysFriction = driftingCurve;
+        } else
+        {
+            fwl.sidewaysFriction = defaultCurve;
+            fwr.sidewaysFriction = defaultCurve;
+            bwl.sidewaysFriction = defaultCurve;
+            bwr.sidewaysFriction = defaultCurve;
+        }
+    }
+
+    // This is a really simple approach to updating wheels.
+    // We simulate a rear wheel drive car and assume that the car is perfectly symmetric at local zero.
+    // This helps us to figure our which wheels are front ones and which are rear.
+
+    void Update()
 	{
-		m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
+        // adds speed boost
+        speedBoost(Input.GetKey(KeyCode.LeftControl), boostAmount   );
+        drift(Input.GetKey(KeyCode.C),slideForwardWheels);
+        m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
+        Debug.Log(maxTorque);
 
 		float angle = maxAngle * Input.GetAxis("Horizontal");
 		float torque = maxTorque * Input.GetAxis("Vertical");
