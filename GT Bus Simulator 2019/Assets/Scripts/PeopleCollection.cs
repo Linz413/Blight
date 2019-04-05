@@ -16,7 +16,7 @@ public class PeopleCollection : MonoBehaviour
     public float timeToWin = 30;
     private float currentTime = 0;
     private int busHealth = 100;
-//    public Slider myHealthSlider;
+    public Slider myHealthSlider;
     public int requiredScore = 10;
     public int strikes = 0;
     public int maxKilledStudents = 3;
@@ -55,7 +55,7 @@ public class PeopleCollection : MonoBehaviour
         gameEndWinCanvasGroup.blocksRaycasts = false;
         
         targetPoint = busStops[busCurrentBusStop].transform.position;
-//        myHealthSlider.value = busHealth;
+        myHealthSlider.value = busHealth;
     }
 
     private void Update()
@@ -125,7 +125,7 @@ public class PeopleCollection : MonoBehaviour
         busHealth = busHealth - 5;
         audioSource.clip = crashNoise;
         audioSource.Play();
-//        myHealthSlider.value = busHealth;
+        myHealthSlider.value = busHealth;
 //        if (busHealth == 0)
 //        {
 //            //LOSE CONDITION
@@ -134,13 +134,21 @@ public class PeopleCollection : MonoBehaviour
 //        }
     }
     
+    public void HitObject(int damage)
+    {
+        busHealth = busHealth - damage;
+        audioSource.clip = crashNoise;
+        audioSource.Play();
+        myHealthSlider.value = busHealth;
+    }
+    
     public void HitBusStop()
     {
         hitAI++;
         busHealth = busHealth - 5;
         audioSource.clip = crashNoise;
         audioSource.Play();
-//        myHealthSlider.value = busHealth;
+        myHealthSlider.value = busHealth;
 //        if (busHealth == 0)
 //        {
 //            //LOSE CONDITION
@@ -180,7 +188,7 @@ public class PeopleCollection : MonoBehaviour
         gameEndWinCanvasGroup.blocksRaycasts = true;
         gameEndWinText.text = message;
         var time = hourCount * 60 * 60 + minuteCount * 60 + secondsCount;
-        gameEndWinCanvasGroup.GetComponent<calculateScore>().calcScore(time, busHealth, killedStudents);
+        gameEndWinCanvasGroup.GetComponent<calculateScore>().calcScore(time, busHealth, killedStudents, requiredScore);
         
         
     }

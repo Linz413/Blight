@@ -10,6 +10,13 @@ public class calculateScore : MonoBehaviour
     public Text[] scoreBoxes;
     public GameObject bus;
     private float total;
+    public int logBaseTime = 3;
+    public int scorePercentTime;
+    public int scorePercentCondition;
+    public int scorePercentLures;
+    public int baseScore = 100;
+    public int studentHitPenalty = 350;
+    public int luresMultiplier = 50;
         
     // Start is called before the first frame update
     void Start()
@@ -23,14 +30,14 @@ public class calculateScore : MonoBehaviour
         
     }
 
-    public void calcScore(float time, int damage, int strikes)
+    public void calcScore(float time, int damage, int strikes, int studentsNeeded)
     {
 //        Debug.LogWarning(strikes);
-        StartCoroutine(calc(time, damage, strikes));
+        StartCoroutine(calc(time, damage, strikes, studentsNeeded));
 
     }
 
-    IEnumerator calc(float time, int damage, int strikes)
+    IEnumerator calc(float time, int damage, int strikes, int studentsNeeded)
     {
         int i = 0;
         
@@ -40,7 +47,7 @@ public class calculateScore : MonoBehaviour
             subText.gameObject.SetActive(true);
             subText.text = "";
             scoreBoxes[i].gameObject.SetActive(true);
-            countScore(subText, i, time, damage, strikes);
+            countScore(subText, i, time, damage, strikes, studentsNeeded);
             i++;
             yield return WaitForRealSeconds(2);
         }
@@ -56,38 +63,42 @@ public class calculateScore : MonoBehaviour
     }
      
     
-    private void countScore(Text subText, int index, float time, int damage, int strikes)
+    private void countScore(Text subText, int index, float time, int damage, int strikes, int studentsNeeded)
     {
-        int scoreCountUp = 0;
-        float timer = 0;
+//        int scoreCountUp = 0;
+//        float timer = 0;
         float amount = 0;
         double duration = 5.0f;
         float currentDisplayScore = 0;
 
+        float baseS = baseScore * studentsNeeded;
+
         switch (index)
         {
             case 0:
-                amount = time;
+                amount = baseS * Mathf.Pow(logBaseTime, (1 / Mathf.Log(time)));
+//                amount = time;
                 total += amount;
                 break;
             case 1:
-                amount = bus.GetComponent<BusAbilities>().lures;
+                
+                amount = (float) bus.GetComponent<BusAbilities>().lures * luresMultiplier;
                 total += amount;
                 break;
             case 2:
-                amount = damage;
+                amount = (100-damage) *-3;
                 total += amount;
                 break;
             case 3:
-                if (strikes == 0)
+/*                if (strikes == 0)
                 {
                     amount = -1;
                 }
                 else
-                {
-                    amount = strikes;
+                {*/
+                    amount = -strikes * studentHitPenalty;
                     total += amount;
-                }
+//                /**/}
                 break;
             case 4:
                 amount = total;
@@ -105,20 +116,25 @@ public class calculateScore : MonoBehaviour
 
     IEnumerator CountUpToTarget(float currentDisplayScore, float amount, Text subText, double duration)
     {
-        while (currentDisplayScore < amount)
+        float absAmount = Mathf.Abs(amount);
+        if (absAmount== 0)
+        {
+            subText.text = "0";
+        }
+        while (currentDisplayScore < absAmount)
         {
             float scoreMultiplier = (float) (Time.unscaledDeltaTime / duration);
-            float scoreAdd = amount * scoreMultiplier;
+            float scoreAdd = absAmount * scoreMultiplier;
             currentDisplayScore += currentDisplayScore + scoreAdd;
-            if (amount == -1)
+
+            currentDisplayScore = Mathf.Clamp(currentDisplayScore, 0f, absAmount);
+            subText.text = "";
+            if (amount < 0)
             {
-                subText.text = "0";
+                subText.text = "-";
             }
-            else
-            {
-                currentDisplayScore = Mathf.Clamp(currentDisplayScore, 0f, amount);
-                subText.text = currentDisplayScore.ToString();
-            }
+            subText.text += currentDisplayScore.ToString("0.##");
+
             yield return null;
         }
     }
