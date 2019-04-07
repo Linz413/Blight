@@ -28,4 +28,11 @@ public class GameStarter : MonoBehaviour
         //ADD AUDIO HERE
         SceneManager.LoadScene("RedRoute");
     }
+
+    public void ChooseRoute()
+    {
+        //ADD AUDIO HERE
+        SceneManager.LoadScene("Instructions");
+    }
+
 }

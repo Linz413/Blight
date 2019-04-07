@@ -21,4 +21,10 @@ public class GameQuitter : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ReturnToMainMenu()
+    {
+        //ADD AUDIO HERE
+        SceneManager.LoadScene("StartMenu");
+    }
 }
