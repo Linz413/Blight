@@ -35,4 +35,10 @@ public class GameStarter : MonoBehaviour
         SceneManager.LoadScene("Instructions");
     }
 
+    public void GoToControls()
+    {
+        //ADD AUDIO HERE
+        SceneManager.LoadScene("Controls");
+    }
+
 }
