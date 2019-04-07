@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Instructions.unity
     guid: 8b6af69640a8a574abae3af455576f21
   - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 36e83236415b35e42bed337ed650a71d
+  - enabled: 1
     path: Assets/Scenes/BlueRoute.unity
     guid: 6deab747e230b9843b405817000f1dfc
   - enabled: 1
