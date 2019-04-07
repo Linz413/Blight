@@ -54,6 +54,7 @@ public class CarAI : MonoBehaviour
             case CarState.Drive:
                 if (!agent.pathPending && agent.remainingDistance == 0)
                 {
+                    m_CarController.Move(1f, 2f, 0, 0);
                     SetNextWaypoint();
                 }
                 break;
@@ -100,7 +101,10 @@ public class CarAI : MonoBehaviour
             if (student != null)
             {
                 print("STUDENT");
-                state = CarState.SlowDownStudent;
+                if (!student.atBusStop)
+                {
+                    state = CarState.SlowDownStudent;
+                }      
             }
             // another car has entered the trigger
             CarAI otherCar = c.attachedRigidbody.GetComponent<CarAI>();
