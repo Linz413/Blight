@@ -39,6 +39,10 @@ public class PeopleCollection : MonoBehaviour
     public int busCurrentBusStop;
     public GameObject arrow;
     private Vector3 targetPoint;
+
+    //emitter
+    public GameObject emitter;
+    private Smoke_Emitters smoke;
 	void Start() {
 		updateScore();
 		updateStrikes();
@@ -56,6 +60,7 @@ public class PeopleCollection : MonoBehaviour
         
         targetPoint = busStops[busCurrentBusStop].transform.position;
         myHealthSlider.value = busHealth;
+        smoke = emitter.GetComponent<Smoke_Emitters>();
     }
 
     private void Update()
@@ -84,6 +89,7 @@ public class PeopleCollection : MonoBehaviour
         Vector3 rot = quat.eulerAngles;
         rot.x = -90;
         arrow.transform.rotation = Quaternion.Euler(rot);
+        smoke.damageLevel = 100 - busHealth;
 //        currentTime += Time.deltaTime;   
 //        if (currentTime > timeToWin)
 //        {
