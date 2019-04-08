@@ -359,22 +359,20 @@ MonoBehaviour:
   m_Text: 'CONTROLS:
 
 
-    BUS CONTROLS:
-
     WASD Keys: Move Bus
 
-    C: Drift
+    C: Drift Bus
 
-    X: Handbrake
+    X: Handbrake on Bus
 
-    Left CTRL: Speed Boost
+    Left CTRL: Speed Boost for Bus
 
-
-    PIZZA LURE:
 
     Left SHIFT: Throw Pizza
 
     Mouse: Aim Pizza Toss
+
+    B: Toggle Highlight of Bus Route
 
 
 
