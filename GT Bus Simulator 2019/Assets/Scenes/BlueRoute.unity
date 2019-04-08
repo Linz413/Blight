@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7312,7 +7312,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138105738}
-  - component: {fileID: 138105739}
   m_Layer: 12
   m_Name: Routes
   m_TagString: Untagged
@@ -7336,19 +7335,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &138105739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138105737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ecae0931a2f9af47a87619d2436459b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 151437079}
 --- !u!1001 &138399721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8717,6 +8703,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 5397820098964765071, guid: 01bda4d5b9b752045982e0ace6fde0c0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 199675653013653351, guid: 01bda4d5b9b752045982e0ace6fde0c0,
         type: 3}
       propertyPath: m_Layer
@@ -8757,13 +8748,33 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 5397820098964765071, guid: 01bda4d5b9b752045982e0ace6fde0c0,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01bda4d5b9b752045982e0ace6fde0c0, type: 3}
+--- !u!1 &149718064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1504373357141619557, guid: 01bda4d5b9b752045982e0ace6fde0c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 149718063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &149718065 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1345326120175804433, guid: 01bda4d5b9b752045982e0ace6fde0c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 149718063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &149718066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149718064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ecae0931a2f9af47a87619d2436459b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 149718065}
 --- !u!1 &150871069
 GameObject:
   m_ObjectHideFlags: 0
@@ -64811,15 +64822,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5896332597413086712, guid: 01bda4d5b9b752045982e0ace6fde0c0,
-        type: 3}
-      propertyPath: m_Name
-      value: Physics Collider
-      objectReference: {fileID: 0}
     - target: {fileID: 5397820098964765071, guid: 01bda4d5b9b752045982e0ace6fde0c0,
         type: 3}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5896332597413086712, guid: 01bda4d5b9b752045982e0ace6fde0c0,
+        type: 3}
+      propertyPath: m_Name
+      value: Physics Collider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01bda4d5b9b752045982e0ace6fde0c0, type: 3}

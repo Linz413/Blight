@@ -23,14 +23,14 @@ public class BusAbilities : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            audioSource.clip = jumpSound;
-            audioSource.Play();
-            Vector3 up = new Vector3(0, 1, 0);
-            Vector3 forceToApply = 5 * up;
-            bus.AddForce(forceToApply, ForceMode.VelocityChange);
-        }
+//        if (Input.GetKeyDown(KeyCode.Space))
+//        {
+//            audioSource.clip = jumpSound;
+//            audioSource.Play();
+//            Vector3 up = new Vector3(0, 1, 0);
+//            Vector3 forceToApply = 5 * up;
+//            bus.AddForce(forceToApply, ForceMode.VelocityChange);
+//        }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && lures != 0)
         {

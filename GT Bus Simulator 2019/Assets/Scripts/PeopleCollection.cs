@@ -132,12 +132,12 @@ public class PeopleCollection : MonoBehaviour
         audioSource.clip = crashNoise;
         audioSource.Play();
         myHealthSlider.value = busHealth;
-//        if (busHealth == 0)
-//        {
-//            //LOSE CONDITION
-//            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
-//            gameEnd(message);
-//        }
+        if (busHealth <= 0)
+        {
+            //LOSE CONDITION
+            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
+            gameEnd(message);
+        }
     }
     
     public void HitObject(int damage)
@@ -146,6 +146,12 @@ public class PeopleCollection : MonoBehaviour
         audioSource.clip = crashNoise;
         audioSource.Play();
         myHealthSlider.value = busHealth;
+        if (busHealth <= 0)
+        {
+            //LOSE CONDITION
+            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
+            gameEnd(message);
+        }
     }
     
     public void HitBusStop()
@@ -155,12 +161,12 @@ public class PeopleCollection : MonoBehaviour
         audioSource.clip = crashNoise;
         audioSource.Play();
         myHealthSlider.value = busHealth;
-//        if (busHealth == 0)
-//        {
-//            //LOSE CONDITION
-//            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
-//            gameEnd(message);
-//        }
+        if (busHealth <= 0)
+        {
+            //LOSE CONDITION
+            message = "Your bus is too beat up to continue! You're out of service! You Lose!";
+            gameEnd(message);
+        }
     }
 
     private void updateScore()
