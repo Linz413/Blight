@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -310,6 +310,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -558,6 +563,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -1290,6 +1300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -2110,6 +2125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -3162,6 +3182,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -4238,6 +4263,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4899,6 +4929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5065,6 +5100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -6350,7 +6390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961893039, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.00000037904834
+      value: 0.00000037811702
       objectReference: {fileID: 0}
     - target: {fileID: 961893039, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -6362,7 +6402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339071609, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0000003469177
+      value: 0.00000034598636
       objectReference: {fileID: 0}
     - target: {fileID: 1339071609, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -6374,7 +6414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 527207468, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.000010647004
+      value: -0.000010648191
       objectReference: {fileID: 0}
     - target: {fileID: 527207468, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -6386,7 +6426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 977756764, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.00000027187522
+      value: -0.0000002728065
       objectReference: {fileID: 0}
     - target: {fileID: 977756764, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -6398,7 +6438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1886970810, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.000000282322
+      value: -0.00000028371895
       objectReference: {fileID: 0}
     - target: {fileID: 1886970810, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -6410,11 +6450,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 242582572, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0006995799
+      value: -0.0006995811
       objectReference: {fileID: 0}
     - target: {fileID: 242582572, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.0000000375763
+      value: 0.000000037576296
       objectReference: {fileID: 0}
     - target: {fileID: 1382742969, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -6422,11 +6462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1382742969, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.003222969
+      value: -0.0032229698
       objectReference: {fileID: 0}
     - target: {fileID: 1382742969, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.010447571
+      value: -0.010447573
       objectReference: {fileID: 0}
     - target: {fileID: 895756718, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -6434,7 +6474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 895756718, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0032230092
+      value: -0.0032230106
       objectReference: {fileID: 0}
     - target: {fileID: 895756718, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -6446,7 +6486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 991716928, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.000000534179
+      value: 0.0000005360416
       objectReference: {fileID: 0}
     - target: {fileID: 991716928, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -6458,7 +6498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540118186, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.0000005105393
+      value: 0.00000051333325
       objectReference: {fileID: 0}
     - target: {fileID: 540118186, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -6483,6 +6523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -7157,6 +7202,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -8000,7 +8050,7 @@ PrefabInstance:
     - target: {fileID: 1345326120175804433, guid: 01bda4d5b9b752045982e0ace6fde0c0,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 10039
+      value: 26423
       objectReference: {fileID: 0}
     - target: {fileID: 3504549693937862540, guid: 01bda4d5b9b752045982e0ace6fde0c0,
         type: 3}
@@ -8707,11 +8757,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 5397820098964765071, guid: 01bda4d5b9b752045982e0ace6fde0c0,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 199675653013653351, guid: 01bda4d5b9b752045982e0ace6fde0c0,
         type: 3}
       propertyPath: m_Layer
@@ -8751,6 +8796,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397820098964765071, guid: 01bda4d5b9b752045982e0ace6fde0c0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01bda4d5b9b752045982e0ace6fde0c0, type: 3}
@@ -9781,7 +9831,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7611744472022881733, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
 --- !u!4 &174082984 stripped
 Transform:
@@ -9991,6 +10042,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -10874,6 +10930,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11046,6 +11107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -12098,6 +12164,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -14992,6 +15063,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17153,6 +17229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -19789,6 +19870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20154,6 +20240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -21172,6 +21263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -22607,6 +22703,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23874,6 +23975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -25919,6 +26025,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26327,6 +26438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -26747,6 +26863,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -32929,7 +33050,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7611744472022881733, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
 --- !u!4 &671120034 stripped
 Transform:
@@ -33139,6 +33261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -34007,6 +34134,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34075,6 +34207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -34640,7 +34777,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7611744472022881733, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
 --- !u!4 &693781068 stripped
 Transform:
@@ -36782,27 +36920,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 961893039, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.000000013969851
+      value: 0.000000013969945
       objectReference: {fileID: 0}
     - target: {fileID: 961893039, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0000000013969841
+      value: -0.000000074971474
       objectReference: {fileID: 0}
     - target: {fileID: 961893039, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.006582084
+      value: 0.006581786
       objectReference: {fileID: 0}
     - target: {fileID: 1339071609, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.0000000055880207
+      value: -0.000000005587926
       objectReference: {fileID: 0}
     - target: {fileID: 1339071609, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.000000058207668
+      value: -0.000000015832486
       objectReference: {fileID: 0}
     - target: {fileID: 1339071609, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.006581828
+      value: -0.006582126
       objectReference: {fileID: 0}
     - target: {fileID: 527207468, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -36810,35 +36948,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 527207468, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.00001039189
+      value: -0.000010537434
       objectReference: {fileID: 0}
     - target: {fileID: 527207468, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.0000003371388
+      value: 0.00000006519259
       objectReference: {fileID: 0}
     - target: {fileID: 977756764, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.012845744
+      value: -0.01284574
       objectReference: {fileID: 0}
     - target: {fileID: 977756764, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.000000046213607
+      value: -0.0000000268175
       objectReference: {fileID: 0}
     - target: {fileID: 977756764, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.00000020870357
+      value: 0.00000008943607
       objectReference: {fileID: 0}
     - target: {fileID: 1886970810, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.012845734
+      value: -0.012845732
       objectReference: {fileID: 0}
     - target: {fileID: 1886970810, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.000000015705579
+      value: 0.00000015126777
       objectReference: {fileID: 0}
     - target: {fileID: 1886970810, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.00000005075708
+      value: -0.0000003243331
       objectReference: {fileID: 0}
     - target: {fileID: 242582572, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -36846,11 +36984,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 242582572, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.000699257
+      value: -0.00069912215
       objectReference: {fileID: 0}
     - target: {fileID: 242582572, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.00000009345707
+      value: 0.00000036912922
       objectReference: {fileID: 0}
     - target: {fileID: 1382742969, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -36858,11 +36996,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1382742969, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0032227063
+      value: -0.003222643
       objectReference: {fileID: 0}
     - target: {fileID: 1382742969, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.010447644
+      value: -0.010447342
       objectReference: {fileID: 0}
     - target: {fileID: 895756718, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -36870,35 +37008,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 895756718, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0032227857
+      value: -0.0032226515
       objectReference: {fileID: 0}
     - target: {fileID: 895756718, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.010447523
+      value: 0.010447798
       objectReference: {fileID: 0}
     - target: {fileID: 991716928, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.010840499
+      value: -0.0108403275
       objectReference: {fileID: 0}
     - target: {fileID: 991716928, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.000000072854164
+      value: -0.00000013572571
       objectReference: {fileID: 0}
     - target: {fileID: 991716928, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: 0.0000000547152
+      value: 0.0000002993038
       objectReference: {fileID: 0}
     - target: {fileID: 540118186, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.010840508
+      value: -0.010840663
       objectReference: {fileID: 0}
     - target: {fileID: 540118186, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.00000002637534
+      value: -0.000000109052024
       objectReference: {fileID: 0}
     - target: {fileID: 540118186, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.00000004901084
+      value: 0.00000017741691
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
@@ -37912,6 +38050,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38741,6 +38884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -39918,6 +40066,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40764,6 +40917,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -44493,6 +44651,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46559,7 +46722,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7611744472022881733, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
 --- !u!4 &927853857 stripped
 Transform:
@@ -46769,6 +46933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -47734,11 +47903,11 @@ PrefabInstance:
       objectReference: {fileID: 2075727826}
     - target: {fileID: 961893039, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.000000013970464
+      value: 0.000000013968929
       objectReference: {fileID: 0}
     - target: {fileID: 961893039, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0000004996546
+      value: 0.00000072130945
       objectReference: {fileID: 0}
     - target: {fileID: 961893039, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -47746,11 +47915,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1339071609, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.0000000055872533
+      value: -0.000000005588788
       objectReference: {fileID: 0}
     - target: {fileID: 1339071609, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.0000005336479
+      value: 0.00000068685046
       objectReference: {fileID: 0}
     - target: {fileID: 527207468, guid: 6fa627b0a8bd7934198bea12aa914d71, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -50197,6 +50366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -53116,6 +53290,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -53593,6 +53772,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -54234,6 +54418,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54772,6 +54961,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -56328,6 +56522,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -56885,6 +57084,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -57069,6 +57273,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -59717,6 +59926,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60134,6 +60348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -60952,6 +61171,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61615,6 +61839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -63378,6 +63607,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64167,6 +64401,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64587,6 +64826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -64826,15 +65070,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5397820098964765071, guid: 01bda4d5b9b752045982e0ace6fde0c0,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 5896332597413086712, guid: 01bda4d5b9b752045982e0ace6fde0c0,
         type: 3}
       propertyPath: m_Name
       value: Physics Collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 5397820098964765071, guid: 01bda4d5b9b752045982e0ace6fde0c0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01bda4d5b9b752045982e0ace6fde0c0, type: 3}
@@ -65133,7 +65377,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7611744472022881733, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
 --- !u!4 &1262072024 stripped
 Transform:
@@ -67376,6 +67621,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -69578,6 +69828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -72108,6 +72363,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73339,6 +73599,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -73860,6 +74125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -74466,6 +74736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -77147,6 +77422,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -77937,6 +78217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -83106,6 +83391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -84664,7 +84954,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7611744472022881733, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
 --- !u!4 &1668181495 stripped
 Transform:
@@ -88038,6 +88329,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88993,6 +89289,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -90519,7 +90820,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7611744472022881733, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
 --- !u!4 &1773352193 stripped
 Transform:
@@ -90804,6 +91106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -93078,6 +93385,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -93501,6 +93813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -95200,6 +95517,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -95909,7 +96231,8 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7611744472022881733, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 3}
 --- !u!4 &1880298098 stripped
 Transform:
@@ -97118,6 +97441,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -97809,6 +98137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -98596,6 +98929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98752,6 +99090,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98901,6 +99244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -99459,6 +99807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -99943,6 +100296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
@@ -104602,6 +104960,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student Waypoint (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -104753,6 +105116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Student Waypoint (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832457924424112887, guid: 3cbdc120bfb96d54cb27855af023fe1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1272807001389400736, guid: 3cbdc120bfb96d54cb27855af023fe1b,
         type: 3}

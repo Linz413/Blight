@@ -67,7 +67,7 @@ public class StudentAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetFloat("MoveSpeed", agent.velocity.magnitude / agent.speed);
+        //anim.SetFloat("MoveSpeed", agent.velocity.magnitude / agent.speed);
         anim.SetBool("Grounded", true);
         print(state);
         if (currWaypoint == waypoints.Length - 1)
@@ -100,10 +100,8 @@ public class StudentAI : MonoBehaviour
                 }
                 break;
             case StudentState.Walk:
-                if (!agent.pathPending && agent.remainingDistance == 0)
+                if (!agent.pathPending && agent.remainingDistance < 2)
                 {
-                    //currentV = 2f;
-                    //currentH = 2f;
                     anim.SetFloat("MoveSpeed", 2f);
                     SetNextWaypoint();
                 }

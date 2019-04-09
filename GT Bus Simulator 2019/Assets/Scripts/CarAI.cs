@@ -52,9 +52,9 @@ public class CarAI : MonoBehaviour
                 state = CarState.Drive;
                 break;
             case CarState.Drive:
-                if (!agent.pathPending && agent.remainingDistance == 0)
+                m_CarController.Move(0, 2f, 0, 0);
+                if (!agent.pathPending && agent.remainingDistance < 3)
                 {
-                    m_CarController.Move(1f, 2f, 0, 0);
                     SetNextWaypoint();
                 }
                 break;
