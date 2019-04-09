@@ -48,8 +48,8 @@ public class armController : MonoBehaviour
         //    }
         //}
         //https://answers.unity.com/questions/341962/smooth-transition-for-getaxis-when-pressing-opposi.html disable this for this to work well
-        Debug.Log(Input.GetAxis("Horizontal"));
-        if (Input.GetKey("a"))
+        //Debug.Log(Input.GetAxis("Horizontal"));
+        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             if (leftArmAngle < angleLimit)
             {
@@ -70,7 +70,7 @@ public class armController : MonoBehaviour
                 hipAngle -= movementSpeed * msscaling;
             }
         }
-        else if (Input.GetKey("d"))
+        else if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             if (rightArmAngle < angleLimit)
             {

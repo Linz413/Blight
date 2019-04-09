@@ -100,7 +100,7 @@ public class CarAI : MonoBehaviour
             StudentAI student = c.attachedRigidbody.GetComponent<StudentAI>();
             if (student != null)
             {
-                print("STUDENT");
+                //print("STUDENT");
                 if (!student.atBusStop)
                 {
                     state = CarState.SlowDownStudent;
@@ -110,7 +110,7 @@ public class CarAI : MonoBehaviour
             CarAI otherCar = c.attachedRigidbody.GetComponent<CarAI>();
             if (otherCar != null)
             {
-                print("OTHER CAR");
+                //print("OTHER CAR");
                 state = CarState.SlowDownOtherCar;
             }
             // the bus has entered the trigger
