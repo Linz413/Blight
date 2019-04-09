@@ -15,7 +15,7 @@ public class PeopleCollection : MonoBehaviour
     private int hitAI = 0;
     public float timeToWin = 30;
     private float currentTime = 0;
-    private int busHealth = 100;
+    public int busHealth = 100;
     public Slider myHealthSlider;
     public int requiredScore = 10;
     public int strikes = 0;
@@ -67,6 +67,8 @@ public class PeopleCollection : MonoBehaviour
     {
         UpdateTimerUI();
         var difference = targetPoint - transform.position;
+        smoke.damageLevel = 100 - busHealth;
+        Debug.Log(smoke.damageLevel);
         if (Vector3.Distance(targetPoint, transform.position) < 15)
         {
             busCurrentBusStop++;
@@ -89,7 +91,7 @@ public class PeopleCollection : MonoBehaviour
         Vector3 rot = quat.eulerAngles;
         rot.x = -90;
         arrow.transform.rotation = Quaternion.Euler(rot);
-        smoke.damageLevel = 100 - busHealth;
+        
 //        currentTime += Time.deltaTime;   
 //        if (currentTime > timeToWin)
 //        {

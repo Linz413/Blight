@@ -131,7 +131,7 @@ public class WheelDrive : MonoBehaviour
         speedBoost(Input.GetKey(KeyCode.LeftControl), boostAmount   );
         drift(Input.GetKey(KeyCode.C),slideForwardWheels);
         m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
-        Debug.Log(maxTorque);
+        //Debug.Log(maxTorque);
 
 		float angle = maxAngle * Input.GetAxis("Horizontal");
 		float torque = maxTorque * Input.GetAxis("Vertical");

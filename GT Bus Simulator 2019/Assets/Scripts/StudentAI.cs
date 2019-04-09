@@ -69,7 +69,7 @@ public class StudentAI : MonoBehaviour
     {
         //anim.SetFloat("MoveSpeed", agent.velocity.magnitude / agent.speed);
         anim.SetBool("Grounded", true);
-        print(state);
+        //print(state);
         if (currWaypoint == waypoints.Length - 1)
         {
             currWaypoint = -1;
@@ -78,7 +78,7 @@ public class StudentAI : MonoBehaviour
         {
             state = StudentState.Idle;
         }
-        print(state);
+        //print(state);
         switch (state)
         {
             case StudentState.Idle:
@@ -91,7 +91,7 @@ public class StudentAI : MonoBehaviour
                     //anim.SetTrigger("Wave");
                     anim.SetBool("Wave 0", true);
                     //anim.SetFloat("MoveSpeed", 0.5f);
-                    print("Wave");
+                    //print("Wave");
                     //anim.ResetTrigger("Wave");
                 }
                 else
