@@ -68,7 +68,6 @@ public class PeopleCollection : MonoBehaviour
         UpdateTimerUI();
         var difference = targetPoint - transform.position;
         smoke.damageLevel = 100 - busHealth;
-        Debug.Log(smoke.damageLevel);
         if (Vector3.Distance(targetPoint, transform.position) < 15)
         {
             busCurrentBusStop++;

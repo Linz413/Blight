@@ -32,7 +32,6 @@ public class PauseMenuToggle : MonoBehaviour
                 canvasGroup.blocksRaycasts = false;
                 canvasGroup.alpha = 0f;
                 Time.timeScale = 1f;
-                AudioListener.pause = false;
             }
             else
             {
@@ -40,7 +39,6 @@ public class PauseMenuToggle : MonoBehaviour
                 canvasGroup.blocksRaycasts = true;
                 canvasGroup.alpha = 1f;
                 Time.timeScale = 0f;
-                AudioListener.pause = true;
             }
         }
     }

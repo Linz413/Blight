@@ -52,7 +52,7 @@ public class CarAI : MonoBehaviour
                 state = CarState.Drive;
                 break;
             case CarState.Drive:
-                m_CarController.Move(0, 2f, 0, 0);
+                m_CarController.Move(0, 1.7f, 0, 0);
                 if (!agent.pathPending && agent.remainingDistance < 3)
                 {
                     SetNextWaypoint();
@@ -60,18 +60,15 @@ public class CarAI : MonoBehaviour
                 break;
             case CarState.SlowDownStudent:
                 agent.isStopped = true;
-                agent.ResetPath();
                 m_CarController.Move(0, 0, -1f, 1f);
                 break;
             case CarState.SlowDownOtherCar:
                 agent.isStopped = true;
-                agent.ResetPath();
                 m_CarController.Move(0, 0, -1f, 1f);
                 break;
             case CarState.AvoidBus:
                 // HAVE CAR HONK AUDIO
                 agent.isStopped = true;
-                agent.ResetPath();
                 m_CarController.Move(0, 0, -1f, 1f);
                 break;
             default:
@@ -133,6 +130,7 @@ public class CarAI : MonoBehaviour
             if (student != null)
             {
                 state = CarState.Drive;
+                agent.isStopped = false;
                 agent.SetDestination(waypoints[currWaypoint].transform.position);
             }
             // another car has entered the trigger
@@ -140,6 +138,7 @@ public class CarAI : MonoBehaviour
             if (otherCar != null)
             {
                 state = CarState.Drive;
+                agent.isStopped = false;
                 agent.SetDestination(waypoints[currWaypoint].transform.position);
             }
             // the bus has entered the trigger
@@ -147,6 +146,7 @@ public class CarAI : MonoBehaviour
             if (bus != null)
             {
                 state = CarState.Drive;
+                agent.isStopped = false;
                 agent.SetDestination(waypoints[currWaypoint].transform.position);
             }
         } 

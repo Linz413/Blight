@@ -8,7 +8,8 @@ public enum StudentState
     Walk,
     Pizza,
     Hit,
-    PickedUp
+    PickedUp,
+    AvoidBus
 };
 
 [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
@@ -20,27 +21,16 @@ public class StudentAI : MonoBehaviour
     private Rigidbody rigidBody;
     private Animator anim;
     public int currWaypoint = -1;
-    private float moveSpeed = 2;
-    private float turnSpeed = 200;
-    private float jumpForce = 4;
     public Rigidbody pizzaRigidBody = null;
 
     public GameObject[] waypoints;
     public Rigidbody bus = null;
     private StudentState state;
 
-    private readonly float interpolation = 10;
-    private readonly float walkScale = 0.33f;
-    private readonly float backwardsWalkScale = 0.16f;
-    private readonly float backwardRunScale = 0.66f;
-
     private bool wasGrounded;
     private Vector3 currentDirection = Vector3.zero;
     private float currentV = 2f;
     private float currentH = 2f;
-
-    private float jumpTimeStamp = 0;
-    private float minJumpInterval = 0.25f;
 
     private bool isGrounded;
     private bool isLured;
@@ -50,7 +40,8 @@ public class StudentAI : MonoBehaviour
     private float counter;
     private float deathTime = 3f;
 
-    private bool hasBeenHit = false;
+    public bool hasBeenHit = false;
+    public bool stoppedForBus = false;
 
 
     // Start is called before the first frame update
@@ -69,7 +60,7 @@ public class StudentAI : MonoBehaviour
     {
         //anim.SetFloat("MoveSpeed", agent.velocity.magnitude / agent.speed);
         anim.SetBool("Grounded", true);
-        //print(state);
+        print(state);
         if (currWaypoint == waypoints.Length - 1)
         {
             currWaypoint = -1;
@@ -100,7 +91,8 @@ public class StudentAI : MonoBehaviour
                 }
                 break;
             case StudentState.Walk:
-                if (!agent.pathPending && agent.remainingDistance < 2)
+                anim.SetFloat("MoveSpeed", 2f);
+                if (!agent.pathPending && agent.remainingDistance < 3)
                 {
                     anim.SetFloat("MoveSpeed", 2f);
                     SetNextWaypoint();
@@ -110,11 +102,12 @@ public class StudentAI : MonoBehaviour
                 if (pizzaRigidBody != null)
                 {
                     followPizza(pizzaRigidBody);
-                } else
+                }
+                else
                 {
                     state = StudentState.Walk;
                     agent.SetDestination(waypoints[currWaypoint].transform.position);
-                }     
+                }
                 break;
             case StudentState.Hit:
                 // Play an oof audio
@@ -131,10 +124,14 @@ public class StudentAI : MonoBehaviour
             case StudentState.PickedUp:
                 // IMPLEMENT LATER
                 break;
+            case StudentState.AvoidBus:
+                anim.SetFloat("MoveSpeed", 0);
+                agent.isStopped = true;
+                break;
             default:
                 break;
         }
-        
+
         wasGrounded = isGrounded;
     }
 
@@ -165,7 +162,7 @@ public class StudentAI : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         ContactPoint[] contactPoints = collision.contacts;
-        for(int i = 0; i < contactPoints.Length; i++)
+        for (int i = 0; i < contactPoints.Length; i++)
         {
             if (Vector3.Dot(contactPoints[i].normal, Vector3.up) > 0.75f)
             {
@@ -217,7 +214,8 @@ public class StudentAI : MonoBehaviour
         {
             collisions.Remove(collision.collider);
         }
-        if (collisions.Count == 0) {
+        if (collisions.Count == 0)
+        {
             isGrounded = false;
         }
     }
@@ -236,7 +234,7 @@ public class StudentAI : MonoBehaviour
             state = StudentState.Walk;
             agent.SetDestination(waypoints[currWaypoint].transform.position);
         }
-        
+
     }
 
     void followPizza(Rigidbody pizzaLure)
@@ -249,37 +247,39 @@ public class StudentAI : MonoBehaviour
             state = StudentState.Idle;
         }
     }
-
-    void OnTriggerEnter(Collider c)
+    
+    public void StopStudent()
     {
-        if (atBusStop)
-        {
-            if (c.attachedRigidbody != null)
-            {
-                PeopleCollection busPickUp = c.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
-                if (busPickUp != null)
-                {
-                    print("Picked Up");
-                    Destroy(this.gameObject);
-                    busPickUp.ReceivePickup();
-                    state = StudentState.PickedUp;
-                }
-            }
-        } else
-        {
-            if (c.attachedRigidbody != null)
-            {
-                PeopleCollection busPickUp = c.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
-                if (busPickUp != null && hasBeenHit != true)
-                {
-                    busPickUp.HitStudent();
-                    state = StudentState.Hit;
-                    GetComponent<AudioSource>().Play();
-                    hasBeenHit = true;
-                }
-            }
-            
-        }
+        state = StudentState.AvoidBus;
     }
 
+    public void ContinueStudent()
+    {
+        if (currWaypoint == waypoints.Length - 1 || currWaypoint == -1)
+        {
+            currWaypoint = 0;
+        }
+        state = StudentState.Walk;
+        agent.isStopped = false;
+        anim.SetFloat("MoveSpeed", 2f);
+        agent.SetDestination(waypoints[currWaypoint].transform.position);
+        stoppedForBus = false;
+
+    }
+
+    public void PickedUp(PeopleCollection busPickUp)
+    {
+        Destroy(this.gameObject);
+        busPickUp.ReceivePickup();
+        state = StudentState.PickedUp;
+    }
+
+    public void HitStudent(PeopleCollection busPickUp)
+    {
+        busPickUp.HitStudent();
+        state = StudentState.Hit;
+        GetComponent<AudioSource>().Play();
+        hasBeenHit = true;
+
+    }
 }
