@@ -182,7 +182,7 @@ public class PeopleCollection : MonoBehaviour
         strikeText.text = "x" + killedStudents.ToString();
     }
     
-    private void gameEnd(string message)
+    public void gameEnd(string message)
     {
         Time.timeScale = 0f;
         gameScoreCanvasGroup.alpha = 0f;
