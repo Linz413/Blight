@@ -54,6 +54,8 @@ public class WheelDrive : MonoBehaviour
     public float exs, exv, asy, asv, stif;
     public Boolean slideForwardWheels;
     private Rigidbody rb;
+    public float velocity;
+    private Vector3 prevPos;
 
     // Find all the WheelColliders down in the hierarchy.
 	void Start()
@@ -86,7 +88,8 @@ public class WheelDrive : MonoBehaviour
         driftingCurve.asymptoteSlip = asy;
         driftingCurve.asymptoteValue = asv;
         driftingCurve.stiffness = stif;
-        
+        prevPos = this.transform.position;
+        velocity = Vector3.Magnitude(this.transform.position - prevPos) / Time.deltaTime;
     }
 
     //alters the max torque to give a speed boost to the car
@@ -124,12 +127,20 @@ public class WheelDrive : MonoBehaviour
     // This is a really simple approach to updating wheels.
     // We simulate a rear wheel drive car and assume that the car is perfectly symmetric at local zero.
     // This helps us to figure our which wheels are front ones and which are rear.
-
+    private void FixedUpdate()
+    {
+        //velocity
+        velocity = Vector3.Magnitude(this.transform.position - prevPos) / Time.deltaTime;
+        prevPos = this.transform.position;
+    }
     void Update()
 	{
         // adds speed boost
         speedBoost(Input.GetKey(KeyCode.LeftControl), boostAmount   );
         drift(Input.GetKey(KeyCode.C),slideForwardWheels);
+
+       
+
         m_Wheels[0].ConfigureVehicleSubsteps(criticalSpeed, stepsBelow, stepsAbove);
         //Debug.Log(maxTorque);
 
