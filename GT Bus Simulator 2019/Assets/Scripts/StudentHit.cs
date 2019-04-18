@@ -13,6 +13,21 @@ public class StudentHit : MonoBehaviour
         script = student.GetComponent<StudentAI>();
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (script.atBusStop)
+        {
+            if (other.attachedRigidbody != null)
+            {
+                PeopleCollection busPickUp = other.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
+                if (busPickUp != null)
+                {
+                    script.PickedUp(busPickUp);
+                }
+            }
+        }
+    }
+
     void OnTriggerEnter(Collider c)
     {
         if (script.atBusStop)
@@ -20,7 +35,7 @@ public class StudentHit : MonoBehaviour
             if (c.attachedRigidbody != null)
             {
                 PeopleCollection busPickUp = c.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
-                if (busPickUp != null)
+                if (busPickUp != null && script.state.Equals(StudentState.PickedUp))
                 {
                     script.PickedUp(busPickUp);
                 }

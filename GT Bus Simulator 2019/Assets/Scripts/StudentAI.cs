@@ -9,7 +9,8 @@ public enum StudentState
     Pizza,
     Hit,
     PickedUp,
-    AvoidBus
+    AvoidBus,
+    Nothing
 };
 
 [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
@@ -25,7 +26,7 @@ public class StudentAI : MonoBehaviour
 
     public GameObject[] waypoints;
     public Rigidbody bus = null;
-    private StudentState state;
+    public StudentState state;
 
     private bool wasGrounded;
     private Vector3 currentDirection = Vector3.zero;
@@ -43,6 +44,9 @@ public class StudentAI : MonoBehaviour
     public bool hasBeenHit = false;
     public bool stoppedForBus = false;
 
+    PeopleCollection people;
+    private Transform initialPosition;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +57,7 @@ public class StudentAI : MonoBehaviour
         isGrounded = true;
         isLured = false;
         counter = 0f;
+        initialPosition = agent.transform;
     }
 
     // Update is called once per frame
@@ -79,11 +84,7 @@ public class StudentAI : MonoBehaviour
                 }
                 else if (atBusStop)
                 {
-                    //anim.SetTrigger("Wave");
-                    anim.SetBool("Wave 0", true);
-                    //anim.SetFloat("MoveSpeed", 0.5f);
-                    //print("Wave");
-                    //anim.ResetTrigger("Wave");
+                    //anim.SetBool("Wave 0", true);
                 }
                 else
                 {
@@ -122,7 +123,20 @@ public class StudentAI : MonoBehaviour
                 // NEED TO REMOVE OBJECT AT SOME POINT I GUESS
                 break;
             case StudentState.PickedUp:
-                // IMPLEMENT LATER
+                anim.SetFloat("MoveSpeed", 2f);
+                if (agent.remainingDistance < 1.5 && people != null)
+                {
+                    PickedUp(people);
+                }
+                if (Vector3.Distance(agent.transform.position, people.transform.position) > 10)
+                {
+                    agent.SetDestination(initialPosition.transform.position);
+                }
+                //if (Vector3.Distance(agent.transform.position,initialPosition.transform.position) < 2)
+                //{
+                //    anim.SetFloat("MoveSpeed", 0);
+                //    state = StudentState.Idle;
+                //}
                 break;
             case StudentState.AvoidBus:
                 anim.SetFloat("MoveSpeed", 0);
@@ -271,7 +285,7 @@ public class StudentAI : MonoBehaviour
     {
         Destroy(this.gameObject);
         busPickUp.ReceivePickup();
-        state = StudentState.PickedUp;
+        state = StudentState.Nothing;
     }
 
     public void HitStudent(PeopleCollection busPickUp)
@@ -281,5 +295,15 @@ public class StudentAI : MonoBehaviour
         GetComponent<AudioSource>().Play();
         hasBeenHit = true;
 
+    }
+
+    public void GoToBus(WheelDrive bus, PeopleCollection col)
+    {
+        print("gotobus");
+        anim.SetBool("Wave 0", false);
+        anim.SetFloat("MoveSpeed", 2f);
+        agent.SetDestination(bus.transform.position);
+        people = col;
+        state = StudentState.PickedUp;
     }
 }

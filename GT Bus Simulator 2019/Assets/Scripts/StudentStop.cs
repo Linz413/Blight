@@ -17,20 +17,35 @@ public class StudentStop : MonoBehaviour
     {
         if (other.attachedRigidbody != null)
         {
-            PeopleCollection busPickUp = other.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
-            if (busPickUp != null)
+            WheelDrive busPickUp = other.attachedRigidbody.gameObject.GetComponent<WheelDrive>();
+            PeopleCollection peopleColl = other.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
+            if (busPickUp != null && peopleColl != null && busPickUp.velocity < 5f)
             {
-                script.stoppedForBus = true;
-                script.StopStudent();
+                if (!script.atBusStop)
+                {
+                    script.stoppedForBus = true;
+                    script.StopStudent();
+                } 
             }
-            //StudentAI studentTwo = other.attachedRigidbody.GetComponent<StudentAI>();
-            //if (studentTwo != null)
-            //{
-            //    script.StopStudent();
-            //}
         }
-           
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.attachedRigidbody != null)
+        {
+            WheelDrive busPickUp = other.attachedRigidbody.gameObject.GetComponent<WheelDrive>();
+            PeopleCollection peopleColl = other.attachedRigidbody.gameObject.GetComponent<PeopleCollection>();
+            if (busPickUp != null && peopleColl != null && busPickUp.velocity < 3f)
+            {
+                if (script.atBusStop)
+                {
+                    script.GoToBus(busPickUp, peopleColl);
+                }
+            }
+        }
+    }
+
 
     private void OnTriggerExit(Collider c)
     {
@@ -41,11 +56,6 @@ public class StudentStop : MonoBehaviour
             {
                 script.ContinueStudent();
             }
-            //StudentAI studentTwo = c.attachedRigidbody.GetComponent<StudentAI>();
-            //if (studentTwo != null)
-            //{
-            //    script.ContinueStudent();
-            //}
         }
     }
 }
