@@ -18,7 +18,7 @@ public class busTipHandler : MonoBehaviour
         time += Time.deltaTime;
         if(time >= downTime)
         {
-            Debug.Log("fall");
+            //Debug.Log("fall");
             //pc.gameEnd("Your Bus Has Fallen and Cannot Get Up");
             Vector3 target = mainBus.transform.rotation.eulerAngles;
             mainBus.transform.rotation = Quaternion.Euler(0, target.y, 0);

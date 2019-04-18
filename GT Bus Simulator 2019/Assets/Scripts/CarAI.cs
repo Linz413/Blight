@@ -114,7 +114,7 @@ public class CarAI : MonoBehaviour
             PeopleCollection bus = c.attachedRigidbody.GetComponent<PeopleCollection>();
             if (bus != null)
             {
-                print("BUS");
+                //print("BUS");
                 state = CarState.AvoidBus;
                 target = bus.transform;
             }
