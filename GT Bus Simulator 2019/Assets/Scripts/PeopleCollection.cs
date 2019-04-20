@@ -10,7 +10,7 @@ public class PeopleCollection : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip peopleCollectNoise;
     public AudioClip crashNoise;
-    int score = 0;
+    public int score = 0;
     int killedStudents = 0;
     private int hitAI = 0;
     public float timeToWin = 30;
@@ -36,9 +36,12 @@ public class PeopleCollection : MonoBehaviour
     private int minuteCount;
     private int hourCount;
     public GameObject[] busStops;
+    public GameObject[] students;
     public int busCurrentBusStop;
     public GameObject arrow;
     private Vector3 targetPoint;
+    public int currentStudent;
+    private Vector3 difference;
 
     //emitter
     public GameObject emitter;
@@ -66,39 +69,47 @@ public class PeopleCollection : MonoBehaviour
     private void Update()
     {
         UpdateTimerUI();
-        var difference = targetPoint - transform.position;
         smoke.damageLevel = 100 - busHealth;
-        if (Vector3.Distance(targetPoint, transform.position) < 15)
+        if (students[currentStudent] == null)
         {
-            busCurrentBusStop++;
-            targetPoint = busStops[busCurrentBusStop].transform.position;
+            currentStudent++;
+            if (currentStudent >= students.Length)
+            {
+                currentStudent = 0;
+            }
+            targetPoint = students[currentStudent].transform.position;
         }
 
-        if (isRedRoute)
-        {
-            difference.x = -90;
-        }
-        else
-        {
-            difference.x = 90;
+        difference = targetPoint - arrow.transform.position;
 
-        }
-//        difference.y = 0;     // Flatten the vector, assuming you're not concerned with indicating height difference
- 
-        // Maybe use some other method to actually apply the rotation  
-        Quaternion quat = Quaternion.LookRotation(difference.normalized);
-        Vector3 rot = quat.eulerAngles;
-        rot.x = -90;
-        arrow.transform.rotation = Quaternion.Euler(rot);
         
-//        currentTime += Time.deltaTime;   
-//        if (currentTime > timeToWin)
-//        {
-//            // LOSE CONDITION
-//            message = "You were too slow and the students rioted! You are now unemployed... You Lose!";
-//            gameEnd(message); 
-//        }
+
+
+        Debug.DrawRay (arrow.transform.position, difference, Color.green);
+        Debug.DrawLine(arrow.transform.position, targetPoint, Color.red);
+
+        var rot = difference;
+        
+        rot = new Vector3(-90, rot.x, rot.z);
+        
+        Quaternion quat = Quaternion.LookRotation(difference.normalized);
+        rot = quat.eulerAngles;
+        rot.x = -90;
+        
+        arrow.transform.rotation = Quaternion.Euler(rot);
+
     }
+    
+    void OnDrawGizmos()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.green;
+
+//        Gizmos.DrawSphere/**/(transform.position, 1);
+        Gizmos.DrawCube(targetPoint, new Vector3(5, 5,5));
+
+    }
+    
 
     public void ReceivePickup() {
     	score++;

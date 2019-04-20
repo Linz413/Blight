@@ -17,6 +17,7 @@ public class calculateScore : MonoBehaviour
     public int baseScore = 100;
     public int studentHitPenalty = 350;
     public int luresMultiplier = 50;
+    private string[] names = {"time", "lures", "damage", "strikes", "total"};
         
     // Start is called before the first frame update
     void Start()
@@ -40,14 +41,34 @@ public class calculateScore : MonoBehaviour
     IEnumerator calc(float time, int damage, int strikes, int studentsNeeded)
     {
         int i = 0;
-        
+//        Debug.LogWarning("here");
         while (i < scoreBoxes.Length)
         {
+//            Debug.LogWarning("here" + i);
             Text subText = scoreBoxes[i].gameObject.transform.GetChild(0).gameObject.GetComponent<Text>();
             subText.gameObject.SetActive(true);
             subText.text = "";
+            var frontText = "";
+            switch (i)
+            {
+                case(0):
+                    frontText = studentsNeeded + " Students x (100pt) x time mult = ";
+                    break;
+                case(1):
+                    frontText = bus.GetComponent<BusAbilities>().lures + " x ("+ luresMultiplier + "pts) = ";
+                    break;
+                case(2):
+                    frontText = "3 x (-"+ (100-damage) + "pts) = ";
+                    break;
+                case(3):
+                    frontText = strikes + " x (-" + studentHitPenalty + "pts) = ";
+                    break;
+                case(4):
+                    frontText = "";
+                    break;
+            }
             scoreBoxes[i].gameObject.SetActive(true);
-            countScore(subText, i, time, damage, strikes, studentsNeeded);
+            countScore(subText, i, time, damage, strikes, studentsNeeded, frontText);
             i++;
             yield return WaitForRealSeconds(2);
         }
@@ -63,7 +84,8 @@ public class calculateScore : MonoBehaviour
     }
      
     
-    private void countScore(Text subText, int index, float time, int damage, int strikes, int studentsNeeded)
+    private void countScore(Text subText, int index, float time, int damage, int strikes, int studentsNeeded, 
+        string frontText)
     {
 //        int scoreCountUp = 0;
 //        float timer = 0;
@@ -108,18 +130,19 @@ public class calculateScore : MonoBehaviour
 
         
 
-        StartCoroutine(CountUpToTarget(currentDisplayScore, amount, subText, duration));
+        StartCoroutine(CountUpToTarget(currentDisplayScore, amount, subText, duration, frontText));
 
 
 
     }
 
-    IEnumerator CountUpToTarget(float currentDisplayScore, float amount, Text subText, double duration)
+    IEnumerator CountUpToTarget(float currentDisplayScore, float amount, Text subText, double duration, 
+        string frontText)
     {
         float absAmount = Mathf.Abs(amount);
         if (absAmount== 0)
         {
-            subText.text = "0";
+            subText.text += "0";
         }
         while (currentDisplayScore < absAmount)
         {
@@ -128,10 +151,10 @@ public class calculateScore : MonoBehaviour
             currentDisplayScore += currentDisplayScore + scoreAdd;
 
             currentDisplayScore = Mathf.Clamp(currentDisplayScore, 0f, absAmount);
-            subText.text = "";
+            subText.text = frontText;
             if (amount < 0)
             {
-                subText.text = "-";
+                subText.text += "-";
             }
             subText.text += currentDisplayScore.ToString("0.##");
 
