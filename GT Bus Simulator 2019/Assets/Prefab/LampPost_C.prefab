@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 8942626561485124564}
   m_Layer: 0
   m_Name: LampPost_C
-  m_TagString: Untagged
+  m_TagString: environmentObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
