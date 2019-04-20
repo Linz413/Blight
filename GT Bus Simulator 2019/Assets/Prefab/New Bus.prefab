@@ -175,7 +175,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 38711
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 3504549693937862540}
   m_Layer: 0
   m_Name: New Bus
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -803,6 +803,7 @@ MonoBehaviour:
   asv: 0.65
   stif: 1
   slideForwardWheels: 0
+  velocity: 0
 --- !u!82 &5913797555323770154
 AudioSource:
   m_ObjectHideFlags: 0

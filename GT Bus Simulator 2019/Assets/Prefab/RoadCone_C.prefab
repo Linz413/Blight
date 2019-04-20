@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: 6500000}
   - component: {fileID: 66392481815921754}
-  m_Layer: 0
+  - component: {fileID: 6002119686613932891}
+  m_Layer: 15
   m_Name: RoadCone_C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,3 +109,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6002119686613932891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9d91791afe9db4c98c04f43604eb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
