@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4034623047548836749}
   - component: {fileID: 6410800481710610688}
+  - component: {fileID: 2112950991686552085}
   m_Layer: 0
   m_Name: tree 3
   m_TagString: Untagged
@@ -51,6 +52,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5450172235954073922}
   m_Enabled: 1
+--- !u!114 &2112950991686552085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4169708322158224673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b11438f18abf4e8011d36ab3a9c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  destroyObject: 0
 --- !u!135 &556987141989021259
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -85,11 +100,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4034623047548836749}
     m_Modifications:
-    - target: {fileID: 7615488778701701997, guid: 4b78ce4c2c47ffa49b8fcbb7a2a0b2cb,
-        type: 3}
-      propertyPath: m_Name
-      value: tree_1
-      objectReference: {fileID: 0}
     - target: {fileID: 7615488778701545293, guid: 4b78ce4c2c47ffa49b8fcbb7a2a0b2cb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -154,6 +164,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.80000025
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615488778701701997, guid: 4b78ce4c2c47ffa49b8fcbb7a2a0b2cb,
+        type: 3}
+      propertyPath: m_Name
+      value: tree_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b78ce4c2c47ffa49b8fcbb7a2a0b2cb, type: 3}

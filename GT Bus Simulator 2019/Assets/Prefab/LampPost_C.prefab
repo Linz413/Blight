@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400012}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &10800000
 Light:
@@ -236,7 +236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400012}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &10800006
 Light:
@@ -374,7 +374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400012}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &10800010
 Light:
@@ -426,6 +426,8 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 3780990814054804651}
+  - component: {fileID: 6343162630533881572}
+  - component: {fileID: 8942626561485124564}
   m_Layer: 0
   m_Name: LampPost_C
   m_TagString: Untagged
@@ -444,12 +446,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400010}
+  - {fileID: 400000}
   - {fileID: 400008}
-  - {fileID: 400006}
+  - {fileID: 400010}
   - {fileID: 400004}
   - {fileID: 400002}
-  - {fileID: 400000}
+  - {fileID: 400006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -512,3 +514,39 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 2
   m_Center: {x: -1.7, y: 1.4, z: 3.5}
+--- !u!114 &6343162630533881572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be18236dc58c1241a0341a0d8834897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redLights:
+  - {fileID: 10800000}
+  - {fileID: 10800008}
+  yellowLights:
+  - {fileID: 10800010}
+  - {fileID: 10800004}
+  greenLights:
+  - {fileID: 10800002}
+  - {fileID: 10800006}
+  state: 0
+--- !u!114 &8942626561485124564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b11438f18abf4e8011d36ab3a9c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 8
+  destroyObject: 0

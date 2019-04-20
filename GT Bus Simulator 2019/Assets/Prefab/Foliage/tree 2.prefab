@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8217423863251914334}
   - component: {fileID: 4312185720754920055}
+  - component: {fileID: 4374089666551240583}
   m_Layer: 0
   m_Name: tree 2
   m_TagString: Untagged
@@ -78,6 +79,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4297982293379393175}
   m_Enabled: 1
+--- !u!114 &4374089666551240583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7089536211607451578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b11438f18abf4e8011d36ab3a9c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  destroyObject: 0
 --- !u!1001 &5174031173808622660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,11 +100,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8217423863251914334}
     m_Modifications:
-    - target: {fileID: 8964513944471843859, guid: b4e9b451173a9c94296eee7ba3823bfb,
-        type: 3}
-      propertyPath: m_Name
-      value: tree_2
-      objectReference: {fileID: 0}
     - target: {fileID: 8964513944471349299, guid: b4e9b451173a9c94296eee7ba3823bfb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -159,6 +169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964513944471843859, guid: b4e9b451173a9c94296eee7ba3823bfb,
+        type: 3}
+      propertyPath: m_Name
+      value: tree_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e9b451173a9c94296eee7ba3823bfb, type: 3}

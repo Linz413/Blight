@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 6500000}
+  - component: {fileID: 3795283209024147096}
+  - component: {fileID: 5802932931422041814}
   m_Layer: 0
   m_Name: LampPost_B
   m_TagString: Untagged
@@ -96,6 +98,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6091882, y: 0.6025427, z: 4.842849}
   m_Center: {x: 0.0033166409, y: 0.05, z: 2.4214487}
+--- !u!114 &3795283209024147096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a82265e71445ef4e8b13ce337881f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redLight: {fileID: 10800000}
+  yellowLight: {fileID: 10800004}
+  greenLight: {fileID: 10800002}
+  crossRed: {fileID: 10800006}
+  crossGreen: {fileID: 10800008}
+  state: 0
+--- !u!114 &5802932931422041814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b11438f18abf4e8011d36ab3a9c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 8
+  destroyObject: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0

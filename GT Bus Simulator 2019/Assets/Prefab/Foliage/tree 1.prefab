@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246563889365766311}
   - component: {fileID: 1979678340604129787}
+  - component: {fileID: 6690062509088657807}
   m_Layer: 0
   m_Name: tree 1
   m_TagString: Untagged
@@ -51,6 +52,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6870159001980633751}
   m_Enabled: 1
+--- !u!114 &6690062509088657807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467880165991569827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a6b11438f18abf4e8011d36ab3a9c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  destroyObject: 0
 --- !u!1 &5579061782188523250
 GameObject:
   m_ObjectHideFlags: 0

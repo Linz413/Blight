@@ -299,7 +299,7 @@ public class StudentAI : MonoBehaviour
 
     public void GoToBus(WheelDrive bus, PeopleCollection col)
     {
-        print("gotobus");
+        //print("gotobus");
         anim.SetBool("Wave 0", false);
         anim.SetFloat("MoveSpeed", 2f);
         agent.SetDestination(bus.transform.position);
