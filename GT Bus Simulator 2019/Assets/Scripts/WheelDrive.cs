@@ -47,6 +47,7 @@ public class WheelDrive : MonoBehaviour
     private WheelCollider bwl;
     private WheelCollider bwr;
     public float boostAmount;
+    public float boostTime = 10f;
 
     private WheelFrictionCurve defaultCurve;
     private WheelFrictionCurve driftingCurve;
@@ -56,6 +57,7 @@ public class WheelDrive : MonoBehaviour
     private Rigidbody rb;
     public float velocity;
     private Vector3 prevPos;
+    
 
     // Find all the WheelColliders down in the hierarchy.
 	void Start()
@@ -136,7 +138,14 @@ public class WheelDrive : MonoBehaviour
     void Update()
 	{
         // adds speed boost
-        speedBoost(Input.GetKey(KeyCode.LeftControl), boostAmount   );
+        if (Input.GetKey(KeyCode.LeftControl) && boostTime > 0f){
+            speedBoost(true, boostAmount   );
+            boostTime -= Time.deltaTime;
+        } else
+        {
+            speedBoost(false, boostAmount);
+        }
+        
         drift(Input.GetKey(KeyCode.C),slideForwardWheels);
 
        
@@ -158,7 +167,7 @@ public class WheelDrive : MonoBehaviour
             audioSource.Play();
         }
 
-		float handBrake = Input.GetKey(KeyCode.X) ? brakeTorque : 0;
+		float handBrake = Input.GetKey(KeyCode.S) && velocity > 2f ? brakeTorque : 0;
 
 		foreach (WheelCollider wheel in m_Wheels)
 		{
