@@ -17,6 +17,7 @@ public class CarAI : MonoBehaviour
     private UnityEngine.AI.NavMeshAgent agent;
     private Rigidbody rigidBody;
     public int currWaypoint = -1;
+    public AudioSource honkSource;
     //public Rigidbody pizzaRigidBody = null;
 
     public GameObject[] waypoints;
@@ -67,7 +68,7 @@ public class CarAI : MonoBehaviour
                 m_CarController.Move(0, 0, -1f, 1f);
                 break;
             case CarState.AvoidBus:
-                // HAVE CAR HONK AUDIO
+                honkSource.Play();
                 agent.isStopped = true;
                 m_CarController.Move(0, 0, -1f, 1f);
                 break;
