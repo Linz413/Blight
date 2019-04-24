@@ -365,12 +365,12 @@ MonoBehaviour:
 
     X: Handbrake on Bus
 
-    Left CTRL: Speed Boost for Bus
+    Left Shift: Speed Boost for Bus
 
 
-    Left SHIFT: Throw Pizza
+    Q: Throw Pizza to the Left
 
-    Mouse: Aim Pizza Toss
+    E: Throw Pizza to the Right
 
     B: Toggle Highlight of Bus Route
 

@@ -138,7 +138,7 @@ public class WheelDrive : MonoBehaviour
     void Update()
 	{
         // adds speed boost
-        if (Input.GetKey(KeyCode.LeftControl) && boostTime > 0f){
+        if (Input.GetKey(KeyCode.LeftShift) && boostTime > 0f){
             speedBoost(true, boostAmount   );
             boostTime -= Time.deltaTime;
         } else
