@@ -19,16 +19,13 @@ public class PizzaLure : MonoBehaviour
     public void Update()
     {
         //transform.Rotate(Vector3.up, rotateSpeed * Time.deltaTime);
-        if (!specialPizza)
-        {
-            int stillPizza = Eaten();
-        }
+        int stillPizza = Eaten();
     }
 
     void OnTriggerEnter(Collider c)
     {
         //print(c);
-        if (c.attachedRigidbody != null && !specialPizza)
+        if (c.attachedRigidbody != null)
         {
             StudentAI student = c.attachedRigidbody.gameObject.GetComponent<StudentAI>();
             if (student != null)
@@ -40,6 +37,19 @@ public class PizzaLure : MonoBehaviour
                 }
             }
         }
+        //if (!specialPizza)
+        //{
+        //    StudentStop student = c.gameObject.GetComponent<StudentStop>();
+        //    print(student);
+        //    if (student != null)
+        //    {
+        //        if (counter <= aliveTime)
+        //        {
+        //            student.StudentLuredChild(true, this.gameObject.GetComponent<Rigidbody>());
+        //            students.Add(student);
+        //        }
+        //    }
+        //}
     }
 
     private void OnDestroy()
