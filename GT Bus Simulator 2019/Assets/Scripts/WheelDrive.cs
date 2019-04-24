@@ -166,8 +166,13 @@ public class WheelDrive : MonoBehaviour
             playingSound = true;
             audioSource.Play();
         }
-
-		float handBrake = Input.GetKey(KeyCode.S) && velocity > 2f ? brakeTorque : 0;
+        Vector3 velocity = rb.velocity;
+        Vector3 lvl = transform.InverseTransformDirection(velocity);
+        float handBrake = Input.GetKey(KeyCode.S) && lvl.z > 0 ? brakeTorque : 0;
+        if(Input.GetKey(KeyCode.S) && lvl.z > 0)
+        {
+            rb.AddForce(-rb.velocity * rb.mass / 8, ForceMode.Impulse);
+        }
 
 		foreach (WheelCollider wheel in m_Wheels)
 		{
