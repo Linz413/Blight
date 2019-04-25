@@ -21,13 +21,13 @@ public class boostFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && wheeldrive.boostAmount > 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && wheeldrive.boostTime > 0)
         {
             flame.Play();
             
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift) || wheeldrive.boostAmount <= 0) {
+        if (Input.GetKeyUp(KeyCode.LeftShift) || wheeldrive.boostTime <= 0) {
             flame.Stop();
 }
     }
