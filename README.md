@@ -7,7 +7,7 @@ Name|Email|OIT Account name
 Brooke White|bwhite66@gatech.edu|bwhite66
 Katie Cox|kcox40@gatech.edu|kcox40
 Lindsey Stowell|lstowell3@gatech.edu|lstowell3
-Lucas Liu|lucasliu@gatech.edu|
+Lucas Liu|lucasliu@gatech.edu| lliu347
 Nichole Deeb|ndeeb3@gatech.edu|ndeeb3
 
 # GT Bus Simulator
