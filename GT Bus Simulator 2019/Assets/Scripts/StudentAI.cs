@@ -304,6 +304,6 @@ public class StudentAI : MonoBehaviour
         anim.SetFloat("MoveSpeed", 2f);
         agent.SetDestination(bus.transform.position);
         people = col;
-        state = StudentState.PickedUp;
+        //state = StudentState.PickedUp;
     }
 }

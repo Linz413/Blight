@@ -41,4 +41,9 @@ public class GameStarter : MonoBehaviour
         SceneManager.LoadScene("Controls");
     }
 
+    public void GoToScores()
+    {
+        SceneManager.LoadScene("HighScores");
+    }
+
 }

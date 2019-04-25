@@ -85,8 +85,8 @@ public class PeopleCollection : MonoBehaviour
         
 
 
-        Debug.DrawRay (arrow.transform.position, difference, Color.green);
-        Debug.DrawLine(arrow.transform.position, targetPoint, Color.red);
+        // Debug.DrawRay (arrow.transform.position, difference, Color.green);
+        // Debug.DrawLine(arrow.transform.position, targetPoint, Color.red);
 
         var rot = difference;
         
@@ -100,15 +100,15 @@ public class PeopleCollection : MonoBehaviour
 
     }
     
-    void OnDrawGizmos()
-    {
-        // Draw a yellow sphere at the transform's position
-        Gizmos.color = Color.green;
+//     void OnDrawGizmos()
+//     {
+//         // Draw a yellow sphere at the transform's position
+//         Gizmos.color = Color.green;
 
-//        Gizmos.DrawSphere/**/(transform.position, 1);
-        Gizmos.DrawCube(targetPoint, new Vector3(5, 5,5));
+// //        Gizmos.DrawSphere/**/(transform.position, 1);
+//         Gizmos.DrawCube(targetPoint, new Vector3(5, 5,5));
 
-    }
+//     }
     
 
     public void ReceivePickup() {
@@ -117,6 +117,7 @@ public class PeopleCollection : MonoBehaviour
         audioSource.Play();
     	//scoreText.text = "Picked Up: " + score.ToString();
         updateScore();
+        Debug.LogWarning(score);
         if (score >= requiredScore && currentTime <= timeToWin)
         {
             // WIN CONDITION

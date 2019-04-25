@@ -18,6 +18,7 @@ public class calculateScore : MonoBehaviour
     public int studentHitPenalty = 350;
     public int luresMultiplier = 50;
     private string[] names = {"time", "lures", "damage", "strikes", "total"};
+    public Text userName;
         
     // Start is called before the first frame update
     void Start()
@@ -161,5 +162,35 @@ public class calculateScore : MonoBehaviour
             yield return null;
         }
     }
+
+    public void SubmitScore()
+    {
+        var newName = this.userName.text;
+        var newScore = this.total;
+        HighScoreManager._instance.SaveHighScore(newName, newScore);
+//        float oldScore;
+//        string oldName;
+//        for (int i = 0; i < 10; i++)
+//        {
+//            if(PlayerPrefs.GetInt(i+"HScore")<newScore){ 
+//                // new score is higher than the stored score
+//                oldScore = PlayerPrefs.GetFloat(i+"HScore");
+//                oldName = PlayerPrefs.GetString(i+"HScoreName");
+//                PlayerPrefs.SetFloat(i+"HScore", newScore);
+//                PlayerPrefs.SetString(i+"HScoreName",newName);
+//                newScore = oldScore;
+//                newName = oldName;
+//            } else{
+//                PlayerPrefs.SetFloat(i+"HScore", newScore);
+//                PlayerPrefs.SetString(i+"HScoreName",newName);
+//                newScore = 0;
+//                newName = "";
+//            }
+//        }
+        
+
+
+    }
+    
     
 }

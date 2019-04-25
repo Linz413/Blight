@@ -11,6 +11,12 @@
         <e p="Bus Assets" t="Include">
           <e p="Smoke_Emitters.cs" t="Include" />
         </e>
+        <e p="highscoreView.cs" t="Include" />
+        <e p="LowPolyFantasyClouds" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="CloudsShader.shader" t="Include" />
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="GitHub" t="Include">
             <e p="Editor" t="Include">
@@ -18,6 +24,13 @@
               <e p="eula.txt" t="Include" />
               <e p="ExtensionLoader.cs" t="Include" />
               <e p="UnityAPIWrapper.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Polygonal Particles" t="Include">
+          <e p="Assets" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="GradientBackgroundShader.shader" t="Include" />
             </e>
           </e>
         </e>
@@ -30,11 +43,13 @@
           <e p="cameraController.cs" t="Include" />
           <e p="CarAI.cs" t="Include" />
           <e p="carHitScript.cs" t="Include" />
+          <e p="collisionEffects.cs" t="Include" />
           <e p="ConeCollisionScript.cs" t="Include" />
           <e p="DriftCamera.cs" t="Include" />
           <e p="EasySuspension.cs" t="Include" />
           <e p="GameQuitter.cs" t="Include" />
           <e p="GameStarter.cs" t="Include" />
+          <e p="HighScoreManager.cs" t="Include" />
           <e p="IndicateBusStop.cs" t="Include" />
           <e p="LightController.cs" t="Include" />
           <e p="LightControllerCrosswalk.cs" t="Include" />
