@@ -29,10 +29,10 @@ B | Toggle route view
 ## Rubric Requirements Satisfied
 * 3D Game Feel
   * Game is in 3D
-  * Goal of collecting students is clearly defined
+  * Goal of collecting students  and getting high score is clearly defined
   * Victory/Loss screen on win/failure
   * Start Menu implemented as initial scene
-  * Ability to restart game on win/loss
+  * Ability to restart game on win/loss through in-game menu
   * Not an FPS
 * Precursors to Fun Gameplay
   * Goals/Sub-goals are indicated on Instructions screen
@@ -41,9 +41,60 @@ B | Toggle route view
   * Vehicle to control, ramps to interact with, as well as cars/students to avoid
   * No hollow decisions or fun-killers
   * Hitting cars/students/objects is punished, successfully picking up a student is rewarded
+  * Users can learn strategies for gameplay but no known way to trivially beat game 
 * 3D Character/Vehicle with Real-Time Control 
-  * 
+  * Controling the school bus is main aspect of gameplay
+  * Yellow robot on top of bus shows motion of bus depending on user inputs (real-time feedback on control)
+  * Movement of robot’s arms correspond to the direction faced by the bus’ forward axis
+  * Bus Model and Robot used without built in animations
+  * Player has direct control of bus movement using WASD or arrow keys
+  * Choice of controls is intuitive and easy to access
+  * The bus operates in a fluid motion and students walk normally
+  * The camera follows the bus and is smooth in motion 
+  * There is auditory feedback of hitting environemntal props (students play audio when hit, bus shows signs of destruction)
+  * Bus behavior is realistic  
+* 3D World with Physics and Spatial Simulation
+  * 3D map/props/environment
+  * Real map of Georgia Tech was imported
+  * Terrain with trees was randomly generated then edited
+  * Audio inserted into collisions and other environmental aspects needing auditory feedback
+  * Graphics edited to align with physics representation
+  * Boundaries created to keep players within bounds of playable map
+  * Trees, roadblocks, cones, benches, and other rigidbody objects included in environment that can be destroyed/undergo state change
+  * Students act as animated objects using Mechanim
+  * Students follow waypoints to cross road (must avoid or play audio and ragdoll when hit)
+  * Students wave at bus stops and go to bus (must pick up or stop close enough for them to walk to bus)
+  * Environment is highly interactive with bus
+  * Consistent spatial simulation throughout game
+* Real-time NPC Steering Behaviors / AI
+  * Students and cars are imported from 3rd source but AI is manually coded
+  * Cars have idle, drive, slow down, and avoid states
+  * Cars actively strive to stop when there is a student near/in front of it
+  * Cars attempt to avoid the bus if near it
+  * Students have idle, walk, pizza, hit, pickedUp, and avoid states
+  * Students walk across road to waypoints and attempt to avoid the bus if near
+  * Students waiting to be picked up will walk towards the bus if it's stopped
+  * Students use root motion
+  * Students wave when waiting at the bus stop
+  * Both students and cars have smooth, fluid steering 
+  * Believable AI (students that want to be picked up go to bus when stopped, students avoid cars and bus if possible)
+  * Cars and students can interact with environment if needed (knock over rigidbodies)
+* Polish
+  * Includes Start Menu to start or end game
+  * Includes Instructions Menu to provide context for game
+  * Includes Controls Menu to list controls and allow route choice 
+  * In-Game pause menu has list of controls, ability to quit, and ability to restart (can exit at any point)
+  * Feels like a game for the entire experience
+  * No debug visual output
+  * No test-mode or god-mode buttons
+  * Environment reacts to the bus (rigidbodies fall, cars/students avoid, students walk towards to get picked up)
+  * Particle effects for the bus (exhaust, damage shown from collisions)
+  * Auditory representation of events (pop sound when pick up student, "my leg" audio when hit student, crash when hit environment)
+  * Has definite artistic style with sound theme and unified color palette
+  * Barriers prevent escaping confines of game
+  * Stable game
 
+ 
 ## Deficiencies/Known Bugs
 * Students sometimes do not have complete collision with the bus (i.e. does not actually completely touch the bus), but the player is still given a mark on their license and docked points.
 * Could have extensive performance improvements, such as student spawners rather than all of them being placed on the map. As it currently is, the game is a little slow, especially on lower-end computers
