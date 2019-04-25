@@ -56,4 +56,16 @@ public class Smoke_Emitters : MonoBehaviour
             regularps.Stop();
         }
     }
+    public void deactivate()
+    {
+        regularps.Stop();
+        mediumps.Stop();
+        heavyps.Stop();
+    }
+    public void start()
+    {
+        regularps.Play();
+        mediumps.Play();
+        heavyps.Play();
+    }
 }
