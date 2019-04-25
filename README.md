@@ -16,7 +16,7 @@ We use Unity 2018.3.0+.
 No other components are required to install the game
 ## Gameplay instructions
 Button | Usage
--|-|-
+-|-
 W/Up Arrow|Accelerate Bus
 S/Down Arrow | Decelerate Bus
 A/Left Arrow | Turn left
