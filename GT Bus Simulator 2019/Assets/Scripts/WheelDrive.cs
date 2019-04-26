@@ -48,6 +48,7 @@ public class WheelDrive : MonoBehaviour
     private WheelCollider bwr;
     public float boostAmount;
     public float boostTime = 10f;
+    public float maxBoostTime;
 
     private WheelFrictionCurve defaultCurve;
     private WheelFrictionCurve driftingCurve;
@@ -92,7 +93,8 @@ public class WheelDrive : MonoBehaviour
         driftingCurve.stiffness = stif;
         prevPos = this.transform.position;
         velocity = Vector3.Magnitude(this.transform.position - prevPos) / Time.deltaTime;
-    }
+        maxBoostTime = boostTime;
+	}
 
     //alters the max torque to give a speed boost to the car
     public void speedBoost(bool condition, float superSpeed)

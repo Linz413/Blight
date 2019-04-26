@@ -8,10 +8,10 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="boostIndicator.cs" t="Include" />
         <e p="Bus Assets" t="Include">
           <e p="Smoke_Emitters.cs" t="Include" />
         </e>
-        <e p="highscoreView.cs" t="Include" />
         <e p="LowPolyFantasyClouds" t="Include">
           <e p="Shaders" t="Include">
             <e p="CloudsShader.shader" t="Include" />
@@ -36,6 +36,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="armController.cs" t="Include" />
+          <e p="boostFire.cs" t="Include" />
           <e p="BusAbilities.cs" t="Include" />
           <e p="busStopCollision.cs" t="Include" />
           <e p="busTipHandler.cs" t="Include" />
@@ -50,10 +51,14 @@
           <e p="GameQuitter.cs" t="Include" />
           <e p="GameStarter.cs" t="Include" />
           <e p="HighScoreManager.cs" t="Include" />
+          <e p="highscoreView.cs" t="Include" />
           <e p="IndicateBusStop.cs" t="Include" />
           <e p="LightController.cs" t="Include" />
           <e p="LightControllerCrosswalk.cs" t="Include" />
+          <e p="LightIntersectionController.cs" t="Include" />
+          <e p="LightState.cs" t="Include" />
           <e p="MainMenuQuitter.cs" t="Include" />
+          <e p="minimapTracking.cs" t="Include" />
           <e p="movementScript.cs" t="Include" />
           <e p="ObjectDamageBus.cs" t="Include" />
           <e p="PauseMenuToggle.cs" t="Include" />
